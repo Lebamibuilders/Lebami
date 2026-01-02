@@ -1,31 +1,69 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
-import projectVilla from "@/assets/project-villa.jpg";
-import projectCommercial from "@/assets/project-commercial.jpg";
-import projectInfra from "@/assets/project-infrastructure.jpg";
-import heroImage from "@/assets/hero-building.jpg";
 
+// Cleaned list of high-res images
 const galleryImages = [
-  { id: 1, src: heroImage, title: "Futuristic Tower Complex", category: "Commercial" },
-  { id: 2, src: projectVilla, title: "Azure Heights Villa", category: "Residential" },
-  { id: 3, src: projectCommercial, title: "Nexus Corporate Tower", category: "Commercial" },
-  { id: 4, src: projectInfra, title: "Skyline Bridge", category: "Infrastructure" },
-  { id: 5, src: projectVilla, title: "Emerald Gardens", category: "Residential" },
-  { id: 6, src: projectCommercial, title: "Metro Convention Center", category: "Commercial" },
-  { id: 7, src: projectInfra, title: "Coastal Highway", category: "Infrastructure" },
-  { id: 8, src: heroImage, title: "Innovation Hub", category: "Commercial" },
+  "https://lebami.in/wp-content/uploads/2022/04/manaf-vaniyamkulam-scaled.jpg",
+  "https://lebami.in/wp-content/uploads/2022/02/post3-01-2048x2048.jpg",
+  "https://lebami.in/wp-content/uploads/2022/02/post4-01-2048x2048.jpg",
+  "https://lebami.in/wp-content/uploads/2022/02/postno1-01-2048x2048.jpg",
+  "https://lebami.in/wp-content/uploads/2022/04/manaf-nellikkurissi-scaled.jpg",
+  "https://lebami.in/wp-content/uploads/2022/03/shebber-1-scaled.jpg",
+  "https://lebami.in/wp-content/uploads/2022/03/12-2048x1366.jpg",
+  "https://lebami.in/wp-content/uploads/2022/03/3-2048x1366.jpg",
+  "https://lebami.in/wp-content/uploads/2022/03/RIYA8212-2048x1366.jpg",
+  "https://lebami.in/wp-content/uploads/2022/03/1234567-2048x1366.jpg",
+  "https://lebami.in/wp-content/uploads/2022/03/RIYA8201-2048x1366.jpg",
+  "https://lebami.in/wp-content/uploads/2022/03/RIYA8211-2048x1366.jpg",
+  "https://lebami.in/wp-content/uploads/2022/03/RIYA8197-2048x1366.jpg",
+  "https://lebami.in/wp-content/uploads/2022/03/RIYA8232-2048x1366.jpg",
+  "https://lebami.in/wp-content/uploads/2022/03/RIYA8227-2048x1366.jpg",
+  "https://lebami.in/wp-content/uploads/2022/03/RIYA8235-2048x1366.jpg",
+  "https://lebami.in/wp-content/uploads/2022/03/2-2048x1366.jpg",
+  "https://lebami.in/wp-content/uploads/2022/03/RIYA8236-2048x1366.jpg",
+  "https://lebami.in/wp-content/uploads/2022/03/RIYA8229-2048x1366.jpg",
+  "https://lebami.in/wp-content/uploads/2022/03/RIYA8234-2048x1366.jpg",
+  "https://lebami.in/wp-content/uploads/2022/03/RIYA8226-2048x1366.jpg",
+  "https://lebami.in/wp-content/uploads/2022/04/manaf-nellikkurissi-1-2048x1156.jpg",
+  "https://lebami.in/wp-content/uploads/2022/04/SREEJITH-@-VANIYAMKULAM-3-2048x1152.jpg",
+  "https://lebami.in/wp-content/uploads/2022/04/FAROOQ-@-THOTTAKARA-1-2048x1152.jpg",
+  "https://lebami.in/wp-content/uploads/2022/04/FAROOQ-@-THOTTAKARA-3-2048x1152.jpg",
+  "https://lebami.in/wp-content/uploads/2022/04/SREEJITH-@-VANIYAMKULAM5-2048x1152.jpg",
+  "https://lebami.in/wp-content/uploads/2022/04/19-04-2022-SALINI-AND-REGHU-03-2048x1152.jpg",
+  "https://lebami.in/wp-content/uploads/2022/04/SREEJITH-@-VANIYAMKULAM-2048x1152.jpg",
+  "https://lebami.in/wp-content/uploads/2022/04/SREEJITH-@-VANIYAMKULAM-2-2048x1152.jpg",
+  "https://lebami.in/wp-content/uploads/2022/04/FAROOQ-@-THOTTAKARA2-2048x1152.jpg",
+  "https://lebami.in/wp-content/uploads/2022/04/shebber-3-2048x1152.jpg",
+  "https://lebami.in/wp-content/uploads/2022/04/shabeer-pallakkad-2048x1152.jpg",
+  "https://lebami.in/wp-content/uploads/2021/03/lebami-gallery4.jpg",
+  "https://lebami.in/wp-content/uploads/2021/03/lebami-gallery1.jpg",
+  "https://lebami.in/wp-content/uploads/2021/03/lebami-gallery6.jpg",
+  "https://lebami.in/wp-content/uploads/2021/03/lebami-gallery5.jpg",
+  "https://lebami.in/wp-content/uploads/2021/03/lebami-gallery3..jpg",
+  "https://lebami.in/wp-content/uploads/2021/03/lebami-gallery7.jpg",
+  "https://lebami.in/wp-content/uploads/2021/03/lebami-gallery9.jpg",
+  "https://lebami.in/wp-content/uploads/2021/03/lebami-gallery10.jpg",
+  "https://lebami.in/wp-content/uploads/2021/03/lebami-gallery2.jpg",
+  "https://lebami.in/wp-content/uploads/2021/03/lebami-gallery11.jpg",
+  "https://lebami.in/wp-content/uploads/2021/03/lebami-gallery12.jpg",
+  "https://lebami.in/wp-content/uploads/2021/03/lebami-gallery14.jpg",
+  "https://lebami.in/wp-content/uploads/2021/03/lebami-gallery8.jpg",
+  "https://lebami.in/wp-content/uploads/2021/03/lebami-gallery13.jpg",
+  "https://lebami.in/wp-content/uploads/2022/04/kasim-ottappalam.jpg",
+  "https://lebami.in/wp-content/uploads/2022/04/shareef-vaniyaamkulam.jpeg",
+  "https://lebami.in/wp-content/uploads/2022/04/basheer-thottakara-1536x855.jpg",
+  "https://lebami.in/wp-content/uploads/2022/04/204060995_190191946453378_7422190149670825225_n.jpg",
+  "https://lebami.in/wp-content/uploads/2022/04/240526500_233683952104177_1811288714353957071_n.jpg",
+  "https://lebami.in/wp-content/uploads/2022/03/WhatsApp-Image-2022-03-30-at-12.31.41-PM-1536x1152.jpeg",
+  "https://lebami.in/wp-content/uploads/2022/03/WhatsApp-Image-2022-03-30-at-12.31.40-PM-1536x1152.jpeg",
+  "https://lebami.in/wp-content/uploads/2022/04/WhatsApp-Image-2022-04-01-at-11.33.45-AM.jpeg",
+  "https://lebami.in/wp-content/uploads/2022/04/WhatsApp-Image-2022-04-05-at-11.31.13-AM.jpeg",
+  "https://lebami.in/wp-content/uploads/2022/04/WhatsApp-Image-2022-04-01-at-11.14.38-AM.jpeg",
 ];
-
-const categories = ["All", "Residential", "Commercial", "Infrastructure"];
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
-  const [activeCategory, setActiveCategory] = useState("All");
-
-  const filteredImages = activeCategory === "All"
-    ? galleryImages
-    : galleryImages.filter(img => img.category === activeCategory);
 
   const handlePrev = () => {
     if (selectedImage === null) return;
@@ -55,72 +93,37 @@ const Gallery = () => {
               Project Gallery
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Explore our collection of architectural achievements and
-              construction excellence through stunning visuals.
+              Explore our collection of architectural achievements.
             </p>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Filter Section */}
-      <section className="py-8">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-wrap justify-center gap-4">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-6 py-3 font-orbitron text-sm tracking-wider transition-all duration-300 rounded-lg ${activeCategory === category
-                    ? "bg-gradient-to-r from-primary to-secondary text-foreground shadow-[0_0_20px_rgba(0,102,255,0.3)]"
-                    : "glass-panel text-muted-foreground hover:text-foreground hover:border-primary/50"
-                  }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
         </div>
       </section>
 
       {/* Gallery Grid */}
       <section className="py-12 relative">
         <div className="container mx-auto px-6">
-          <motion.div
-            layout
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-          >
-            <AnimatePresence mode="popLayout">
-              {filteredImages.map((image) => (
-                <motion.div
-                  key={image.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.3 }}
-                  whileHover={{ scale: 1.02 }}
-                  className="group cursor-pointer relative aspect-square rounded-xl overflow-hidden glass-panel"
-                  onClick={() => setSelectedImage(galleryImages.indexOf(image))}
-                >
-                  <img
-                    src={image.src}
-                    alt={image.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute inset-0 flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div>
-                      <span className="text-xs font-orbitron text-primary bg-primary/10 px-2 py-1 rounded-full border border-primary/20 backdrop-blur-sm mb-2 inline-block">
-                        {image.category}
-                      </span>
-                      <h3 className="font-orbitron text-sm font-semibold text-foreground">{image.title}</h3>
-                    </div>
-                  </div>
-                  <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-primary/50 transition-colors duration-500" />
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {galleryImages.map((src, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                className="group cursor-pointer relative aspect-square rounded-xl overflow-hidden glass-panel"
+                onClick={() => setSelectedImage(index)}
+              >
+                <img
+                  src={src}
+                  alt={`Project ${index + 1}`}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-primary/10 transition-colors duration-300" />
+                <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-primary/50 transition-colors duration-500" />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -137,22 +140,22 @@ const Gallery = () => {
             {/* Close Button */}
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-6 right-6 w-12 h-12 glass-panel flex items-center justify-center hover:bg-primary/20 z-10"
+              className="absolute top-6 right-6 w-12 h-12 glass-pamel flex items-center justify-center hover:bg-primary/20 z-10 rounded-full border border-primary/20"
             >
-              <X className="w-6 h-6" />
+              <X className="w-6 h-6 text-foreground" />
             </button>
 
             {/* Navigation */}
             <button
               onClick={(e) => { e.stopPropagation(); handlePrev(); }}
-              className="absolute left-6 w-12 h-12 glass-panel flex items-center justify-center hover:bg-primary/20 z-10"
+              className="absolute left-4 md:left-8 w-12 h-12 glass-panel flex items-center justify-center hover:bg-primary/20 z-10 rounded-full"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
 
             <button
               onClick={(e) => { e.stopPropagation(); handleNext(); }}
-              className="absolute right-6 w-12 h-12 glass-panel flex items-center justify-center hover:bg-primary/20 z-10"
+              className="absolute right-4 md:right-8 w-12 h-12 glass-panel flex items-center justify-center hover:bg-primary/20 z-10 rounded-full"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
@@ -163,26 +166,15 @@ const Gallery = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              className="relative max-w-5xl max-h-[80vh] mx-4"
+              className="relative max-w-7xl max-h-[90vh] mx-4"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="glass-panel overflow-hidden">
+              <div className="overflow-hidden rounded-lg shadow-2xl border border-primary/20">
                 <img
-                  src={galleryImages[selectedImage].src}
-                  alt={galleryImages[selectedImage].title}
-                  className="w-full h-auto max-h-[70vh] object-contain"
+                  src={galleryImages[selectedImage]}
+                  alt={`Project ${selectedImage + 1}`}
+                  className="w-full h-auto max-h-[85vh] object-contain bg-black/50"
                 />
-                <div className="p-6">
-                  <span className="text-sm font-orbitron text-primary">
-                    {galleryImages[selectedImage].category}
-                  </span>
-                  <h3 className="font-orbitron text-xl font-semibold text-foreground">
-                    {galleryImages[selectedImage].title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm mt-1">
-                    {selectedImage + 1} / {galleryImages.length}
-                  </p>
-                </div>
               </div>
             </motion.div>
           </motion.div>
