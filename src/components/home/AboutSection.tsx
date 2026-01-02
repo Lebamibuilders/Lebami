@@ -1,12 +1,18 @@
 import { motion } from "framer-motion";
-import { GlassCard } from "../GlassCard";
-import { TrendingUp, Award, Globe, Settings } from "lucide-react";
+import projectVilla from "@/assets/project-villa.jpg";
+import projectCommercial from "@/assets/project-commercial.jpg";
+import projectInfra from "@/assets/project-infrastructure.jpg";
+import heroImage from "@/assets/hero-building.jpg";
 
-const stats = [
-  { icon: TrendingUp, value: "10+", label: "Years Experience" },
-  { icon: Award, value: "100+", label: "Projects Delivered" },
-  { icon: Globe, value: "2", label: "Countries" },
-  { icon: Settings, value: "360°", label: "Solutions" },
+const expertiseAreas = [
+  { title: "International Stadium Projects", image: heroImage },
+  { title: "Roads & Infra Projects", image: projectInfra },
+  { title: "Airport Runway Projects", image: projectInfra },
+  { title: "Airport Building Projects", image: heroImage },
+  { title: "High Rise Building Projects", image: projectCommercial },
+  { title: "PEB / Steel Structures", image: projectCommercial },
+  { title: "Military Base Projects", image: projectInfra },
+  { title: "Residential Villa Projects", image: projectVilla },
 ];
 
 export const AboutSection = () => {
@@ -30,7 +36,7 @@ export const AboutSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="section-title gradient-text mb-8"
+            className="section-title text-white mb-8"
           >
             Building Excellence
           </motion.h2>
@@ -48,46 +54,44 @@ export const AboutSection = () => {
             we bring world-class standards to every project.
           </motion.p>
 
-          <div className="mt-16 text-left">
-            <h3 className="font-orbitron font-bold text-2xl gradient-text mb-6">Our Team Experts In</h3>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 list-disc list-inside text-muted-foreground mb-12">
-              <li>International stadium Projects</li>
-              <li>Roads & Infra structural Projects</li>
-              <li>Airport Runway Projects</li>
-              <li>Airport Building Projects</li>
-              <li>High rise Building Projects</li>
-              <li>PEB Building / Steel Structural Projects</li>
-              <li>Military Base Projects</li>
-              <li>Residential Villa Projects</li>
-            </ul>
+          <div className="mt-20">
+            <h3 className="font-orbitron font-bold text-3xl text-white mb-12">Our Team Experts In</h3>
 
-            <h3 className="font-orbitron font-bold text-2xl gradient-text mb-6">Quality Assurance</h3>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+              {expertiseAreas.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex flex-col items-center group cursor-pointer"
+                >
+                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-white/20 group-hover:border-blue-500 transition-all duration-500 relative mb-4 shadow-[0_0_20px_rgba(0,0,0,0.3)]">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
+                  </div>
+                  <h4 className="font-orbitron font-semibold text-white/90 text-sm md:text-base max-w-[150px] leading-tight group-hover:text-blue-400 transition-colors">
+                    {item.title}
+                  </h4>
+                </motion.div>
+              ))}
+            </div>
+
+            <h3 className="font-orbitron font-bold text-2xl text-white mb-6">Quality Assurance</h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
               We maintain a strict Quality Control System on all projects. The system includes clearly defined inspection and test plans and procedures adherent with project specifications and requirements. Plans and procedures are regularly monitored and audited, both at project and corporate levels, to ensure compliance with contractual requirements.
             </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Lebami builders & developers pvt. ltd. is committed to operating a quality management system to ensure its continuity and its development to a successful Pan-India civil contractor with prestigiousand vitalprojects
+            <p className="text-muted-foreground leading-relaxed border-l-2 border-primary/50 pl-4 py-2 bg-white/5 rounded-r-lg">
+              Lebami builders & developers pvt. ltd. is committed to operating a quality management system to ensure its continuity and its development to a successful Pan-India civil contractor with prestigious and vital projects.
             </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-          {stats.map((stat, i) => (
-            <GlassCard key={stat.label} delay={i * 0.1} className="!rounded-full border-white/20 bg-white/5">
-              <div className="text-center py-4 px-6 flex flex-col items-center justify-center">
-                <motion.span
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  className="block font-orbitron text-2xl md:text-3xl font-bold text-white mb-1"
-                >
-                  {stat.value}
-                </motion.span>
-                <span className="text-gray-300 text-xs uppercase tracking-wider">{stat.label}</span>
-              </div>
-            </GlassCard>
-          ))}
-        </div>
       </div>
     </section>
   );
