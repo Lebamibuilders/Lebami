@@ -64,7 +64,7 @@ export const Navbar = () => {
                 {location.pathname === link.path && (
                   <motion.div
                     layoutId="navbar-indicator"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-secondary"
+                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#00A3FF] shadow-[0_0_10px_#00A3FF]"
                   />
                 )}
               </Link>

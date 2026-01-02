@@ -408,4 +408,44 @@
   .bg-gradient-hero {
     background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 1) 100%);
   }
+
+  /* --- NEW PREMIUM ADDITIONS --- */
+
+  /* 1. Neon Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #0066FF;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00A3FF;
+    border: 0;
+  }
+
+  /* 2. Selection Highlight */
+  ::selection {
+    background: rgba(0, 255, 255, 0.2);
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+
+  /* 3. Blueprint Grid Background */
+  .bg-blueprint-grid {
+    background-image:
+      linear-gradient(rgba(0, 102, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 102, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  }
 }
