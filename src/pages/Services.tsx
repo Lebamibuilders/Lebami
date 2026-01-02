@@ -16,59 +16,39 @@ const services = [
   {
     id: "design-development",
     icon: PenTool,
-    title: "DESIGN DEVELOPMENT",
-    subtitle: "Innovation in Design & Execution",
-    description: "The innovation is explicitly visible in the design development and the presentation of Lebami builders & developers pvt. ltd. The architectural, electrical, mechanical and structural systems are made to perfectly blend with the whole design concept; with a clear focus on implementation, execution and estimation.",
+    title: "PLANNING & DESIGN",
+    subtitle: "We Draw Your Dream",
+    description: "We make the drawings for your building. We plan where everything goes—the walls, the lights, and the pipes. We make sure it is easy to build and looks great.",
     features: [
-      "Architecture & Planning",
-      "Site Evaluation and Analysis",
-      "Preliminary Design, Report and Presentation",
-      "Detailed Design and Reports",
-      "Presentation Drawings",
-      "Walkthroughs & Animation",
-      "Architectural Scale Models",
-      "Master Plans",
-      "Urban Design & Applications",
-      "Zonal Development Plan",
-      "Township Housing / Low Cost Housing / Villa Project",
-      "Technical & Financial Feasibility Study",
-      "Heritage & Conservation",
-      "Redevelopment & Revitalization",
-      "Regional Planning"
+      "Drawing Plans",
+      "Checking the Land",
+      "Making Models",
+      "Show Pictures of Building",
+      "Planning Big Areas",
+      "Designing Houses",
+      "Designing Offices",
+      "Checking Costs",
+      "Fixing Old Buildings"
     ],
   },
   {
     id: "construction-development",
     icon: HardHat,
-    title: "CONSTRUCTION DEVELOPMENT",
-    subtitle: "Partners in Building Success",
-    description: "Lebami work as a Construction Manager’s and Project Manager’s for our clients on a routine basis. Becoming part of the team to work effectively towards the successful completion of the projects goal. Our years of experience in preliminary design, estimating and construction stages have enabled us to become solid partners focused on the needs of our clients. Building a team between the owner, architect and general contractor promotes the development of a harmonious working relationship and a unified focus toward the successful completion of the project",
+    title: "BUILDING CONSTRUCTION",
+    subtitle: "We Build It For You",
+    description: "We build the building. We manage the workers and the materials. We talk to you, the architect, and the workers to make sure everyone is happy. We build it strong and fast.",
     features: [
-      "Residential Villa Project",
-      "Multi-family Residential Complexes",
-      "Multi-family Residential Villa Project",
-      "Convention Centers",
-      "Commercial Buildings",
-      "Resort Projects",
-      "Specialty Retail Buildings",
-      "Class A Office Buildings",
-      "Banking",
-      "Performing Arts Centers",
-      "Public Safety Facilities",
-      "Government Facilities",
-      "Student Life Facilities",
-      "Field Houses and Athletic Facilities",
-      "Turf football Stadiums",
-      "Recreation and Fitness Centers",
-      "Dining Commons",
-      "Campus Energy",
-      "Campus Infrastructure",
-      "Secondary Education school office",
-      "Pharmacies",
-      "Corporate Interiors",
-      "Residential Interiors",
-      "Commercial Interiors",
-      "Land Development"
+      "Building Villas",
+      "Building Apartments",
+      "Building Malls",
+      "Building Shops",
+      "Building Offices",
+      "Building Banks",
+      "Building Schools",
+      "Building Gyms",
+      "Building Stadiums",
+      "Fixing Interiors",
+      "Making Land Ready"
     ],
   },
 ];
@@ -89,10 +69,10 @@ const Services = () => {
               OUR SERVICES
             </p>
             <h1 className="section-title gradient-text mb-6">
-              Comprehensive Construction Solutions
+              We Can Build It All
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              The Lebami Management team was established by Group of professionals with wide range of experience within respective discipline and is keenly committed team, who deals with reputed companies in India as well as in Middle East
+              We have a team of builders and planners. We can build anything you need in India or the Middle East.
             </p>
           </motion.div>
         </div>

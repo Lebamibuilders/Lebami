@@ -24,7 +24,7 @@ export const StatsCounter = () => {
                             <h3 className="text-4xl md:text-5xl font-orbitron font-bold text-white mb-2 text-glow">
                                 {stat.value}
                             </h3>
-                            <p className="font-mono text-xs md:text-sm text-blue-200 tracking-widest uppercase">
+                            <p className="font-mono text-xs md:text-sm text-primary/80 tracking-widest uppercase">
                                 {stat.label}
                             </p>
                         </motion.div>

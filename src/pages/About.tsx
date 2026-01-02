@@ -3,38 +3,40 @@ import { GlassCard } from "@/components/GlassCard";
 import { Target, Eye, Heart, Globe, Award, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 
+// ... imports remain same
+
 const timeline = [
-  { year: "2014", event: "LEBAMI founded in India" },
-  { year: "2016", event: "First major commercial project completed" },
-  { year: "2018", event: "Expanded operations to Qatar" },
-  { year: "2020", event: "100+ projects milestone reached" },
-  { year: "2022", event: "ISO 9001:2015 certification achieved" },
-  { year: "2024", event: "Launched sustainable construction initiative" },
+  { year: "2014", event: "We started in India" },
+  { year: "2016", event: "Built our first big shop" },
+  { year: "2018", event: "Started working in Qatar" },
+  { year: "2020", event: "Finished 100 projects" },
+  { year: "2022", event: "Got ISO Certified" },
+  { year: "2024", event: "Started Green Building" },
 ];
 
 const values = [
   {
     icon: Eye,
-    title: "Vision",
-    description: "To enrich your dreams, with our authentic products and elegant services. Our effort is firmly to unified our serves continually and reach to a global outfit of recognition by providing extreme quality service and excellent products.",
+    title: "Our Vision",
+    description: "We want to help you build your dream. We want to be known all over the world for doing great work and offering the best service.",
   },
   {
     icon: Target,
-    title: "Mission",
-    description: "We divulge keenly on our products and service for our customer. We constantly strive and explore to acquire most innovative products to our customers, who were utmost priority for us",
+    title: "Our Mission",
+    description: "We work hard for our customers. We always look for new and better ways to build. You are our most important person.",
   },
   {
-    icon: Shield, // Changing icon to Shield or Users for Team if available, keeping Shield/Heart existing import
-    title: "Project Team",
-    description: "We have a team of experts, dynamic and innovative Engineers and Designers who customize and tailor the services according to the Requirement of the clients. They are well conversant with International Standards and Codes in the relevant discipline of engineering. They blend skill and experience to offer high quality and faster detailing Services.",
+    icon: Shield,
+    title: "Our Team",
+    description: "Our engineers and designers are very smart. They know how to build safely and correctly. They work together to build fast and well.",
   },
 ];
 
 const certifications = [
-  "ISO 9001:2015 Quality Management",
-  "ISO 14001:2015 Environmental Management",
-  "OHSAS 18001 Health & Safety",
-  "Green Building Council Member",
+  "ISO Quality Check",
+  "Environment Safety",
+  "Health & Safety",
+  "Green Building Member",
 ];
 
 const About = () => {
@@ -50,14 +52,13 @@ const About = () => {
             className="max-w-4xl mx-auto text-center"
           >
             <p className="font-orbitron text-primary tracking-[0.3em] text-sm mb-4">
-              ABOUT LEBAMI
+              ABOUT US
             </p>
             <h1 className="section-title gradient-text mb-6">
-              Engineering Excellence Since 2014
+              Building Since 2014
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              A decade of transforming visions into landmark structures across
-              India and Qatar, setting new standards in construction excellence.
+              For 10 years, we have been building amazing places in India and Qatar. We are raising the bar for good construction.
             </p>
           </motion.div>
         </div>
@@ -73,7 +74,7 @@ const About = () => {
                   <div className="w-16 h-16 mb-6 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
                     <value.icon className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="font-orbitron text-2xl font-semibold mb-4 gradient-text-blue">
+                  <h3 className="font-orbitron text-2xl font-semibold mb-4 gradient-text-gold">
                     {value.title}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">

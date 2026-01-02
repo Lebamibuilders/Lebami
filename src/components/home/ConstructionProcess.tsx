@@ -40,7 +40,7 @@ export const ConstructionProcess = () => {
 
                 <div className="relative">
                     {/* Connecting Line (Desktop) */}
-                    <div className="hidden md:block absolute top-[60px] left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
+                    <div className="hidden md:block absolute top-[60px] left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                         {steps.map((step, i) => (
@@ -58,15 +58,15 @@ export const ConstructionProcess = () => {
                                 </div>
 
                                 {/* Icon Circle */}
-                                <div className="w-32 h-32 rounded-full glass-panel flex items-center justify-center mb-6 relative z-10 group-hover:scale-110 transition-transform duration-500 border border-blue-500/30 group-hover:border-blue-500/80">
-                                    <step.icon className="w-10 h-10 text-white group-hover:text-blue-400 transition-colors" />
+                                <div className="w-32 h-32 rounded-full glass-panel flex items-center justify-center mb-6 relative z-10 group-hover:scale-110 transition-transform duration-500 border border-primary/30 group-hover:border-primary/80">
+                                    <step.icon className="w-10 h-10 text-white group-hover:text-primary transition-colors" />
 
                                     {/* Pulse Effect */}
-                                    <div className="absolute inset-0 rounded-full bg-blue-500/10 animate-pulse-glow" />
+                                    <div className="absolute inset-0 rounded-full bg-primary/10 animate-pulse-glow" />
                                 </div>
 
-                                <h3 className="text-lg font-orbitron font-bold text-white mb-2">{step.title}</h3>
-                                <p className="text-sm text-blue-200/80">{step.desc}</p>
+                                <h3 className="font-orbitron text-xl font-bold text-white mb-2">{step.title}</h3>
+                                <p className="text-sm text-primary/80">{step.desc}</p>
                             </motion.div>
                         ))}
                     </div>

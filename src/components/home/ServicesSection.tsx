@@ -14,13 +14,13 @@ import {
 const services = [
   {
     icon: PenTool,
-    title: "DESIGN DEVELOPMENT",
-    description: "The innovation is explicitly visible in the design development and the presentation of “Lebami builders & developers pvt. ltd The architectural, electrical, mechanical and structural systems are made to perfectly blend with the whole design concept; with a clear focus on implementation, execution and estimation.",
+    title: "WE PLAN IT",
+    description: "We draw the plans. We make sure it looks good and works well. We check everything before we start.",
   },
   {
     icon: HardHat,
-    title: "CONSTRUCTION DEVELOPMENT",
-    description: "Lebami work as a Construction Manager’s and Project Manager’s for our clients on a routine basis. Becoming part of the team to work effectively towards the successful completion of the projects goal. Our years of experience in preliminary design, estimating and construction stages have enabled us to become solid partners focused on the needs of our clients.",
+    title: "WE BUILD IT",
+    description: "We build your office or shop. We are the boss of the building site. We help you from the start until you get the keys.",
   },
 ];
 
@@ -47,7 +47,7 @@ export const ServicesSection = () => {
             transition={{ delay: 0.1 }}
             className="section-title text-white"
           >
-            The Lebami Edge
+            What We Do
           </motion.h2>
         </div>
 

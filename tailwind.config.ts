@@ -58,9 +58,9 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
         bmw: {
-          blue: "#0066FF",
-          electric: "#00A3FF",
-          dark: "#000000",
+          blue: "#0066FF", // Electric Blue
+          electric: "#00A3FF", // Cyan Edge
+          black: "#02040A", // Onyx
         },
       },
       fontFamily: {
@@ -99,8 +99,8 @@ export default {
           "100%": { opacity: "1", transform: "scale(1)" },
         },
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 20px rgba(0, 102, 255, 0.3)" },
-          "50%": { boxShadow: "0 0 40px rgba(0, 102, 255, 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 20px rgba(0, 102, 255, 0.4)" },
+          "50%": { boxShadow: "0 0 50px rgba(0, 102, 255, 0.7)" },
         },
         shimmer: {
           "0%": { backgroundPosition: "-200% 0" },
@@ -129,7 +129,7 @@ export default {
       backgroundImage: {
         "gradient-radial": "radial-gradient(ellipse at center, var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "blue-glow": "radial-gradient(ellipse at center, rgba(0, 102, 255, 0.15) 0%, transparent 70%)",
+        "blue-glow": "radial-gradient(ellipse at center, rgba(0, 102, 255, 0.2) 0%, transparent 70%)",
       },
     },
   },

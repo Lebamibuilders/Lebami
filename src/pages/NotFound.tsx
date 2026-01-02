@@ -7,14 +7,14 @@ const NotFound = () => {
     <main className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24">
       <div className="grid-bg opacity-30" />
       <div className="absolute inset-0 bg-gradient-radial from-primary/10 to-transparent" />
-      
+
       <div className="container mx-auto px-6 relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           className="max-w-2xl mx-auto text-center"
         >
-          <h1 className="font-orbitron text-8xl md:text-9xl font-bold gradient-text-blue mb-6">
+          <h1 className="font-orbitron text-8xl md:text-9xl font-bold gradient-text-gold mb-6">
             404
           </h1>
           <h2 className="font-orbitron text-2xl md:text-3xl font-semibold text-foreground mb-4">

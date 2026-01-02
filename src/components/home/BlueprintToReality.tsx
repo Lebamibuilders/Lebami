@@ -25,8 +25,8 @@ export const BlueprintToReality = () => {
                                 <div className="absolute inset-0 opacity-20 bg-blueprint" />
 
                                 {/* Blueprint Wireframe (SVG Simulation) */}
-                                <div className="relative z-10 border border-blue-500/30 p-6 rounded-lg opacity-80 mb-8 max-w-md">
-                                    <svg viewBox="0 0 200 150" className="w-full h-full stroke-blue-400/80 stroke-1 fill-none">
+                                <div className="relative z-10 border border-primary/30 p-6 rounded-lg opacity-80 mb-8 max-w-md">
+                                    <svg viewBox="0 0 200 150" className="w-full h-full stroke-primary/80 stroke-1 fill-none">
                                         <rect x="10" y="10" width="180" height="130" />
                                         <line x1="10" y1="50" x2="190" y2="50" />
                                         <line x1="70" y1="10" x2="70" y2="140" />
@@ -34,24 +34,25 @@ export const BlueprintToReality = () => {
                                         <rect x="80" y="60" width="100" height="70" />
                                         <circle cx="150" cy="100" r="10" className="stroke-dashed" />
                                     </svg>
-                                    <div className="absolute -right-2 -bottom-2 text-[10px] font-mono text-blue-400">PLAN_LVL_01</div>
+                                    <div className="absolute -right-2 -bottom-2 text-[10px] font-mono text-primary">PLAN_LVL_01</div>
                                 </div>
 
-                                {/* Project Details */}
-                                <div className="relative z-10 space-y-4">
-                                    <div>
-                                        <p className="text-blue-200 text-sm font-mono">Project: Skyline Tower</p>
-                                        <p className="text-blue-200 text-sm font-mono">Phase: Framing</p>
+                                <div className="space-y-4">
+                                    <div className="flex items-center justify-between border-b border-primary/20 pb-2">
+                                        <p className="text-primary/80 text-sm font-mono">Project: Skyline Tower</p>
+                                        <p className="text-green-400 text-xs font-bold animate-pulse">ACTIVE</p>
                                     </div>
-
-                                    {/* Progress Slider */}
-                                    <div className="relative max-w-md py-4">
-                                        <div className="h-2 bg-blue-900/50 rounded-full overflow-hidden border border-blue-500/30">
+                                    <div className="flex items-center justify-between border-b border-primary/20 pb-2">
+                                        <p className="text-primary/80 text-sm font-mono">Phase: Framing</p>
+                                        <p className="text-white text-xs">85%</p>
+                                    </div>
+                                    <div className="w-full">
+                                        <div className="h-2 bg-primary/10 rounded-full overflow-hidden border border-primary/30">
                                             <motion.div
                                                 initial={{ width: "0%" }}
                                                 whileInView={{ width: "65%" }}
                                                 transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
-                                                className="h-full bg-blue-500/50"
+                                                className="h-full bg-primary/80"
                                             />
                                         </div>
                                         {/* Slider Knob */}
@@ -65,7 +66,7 @@ export const BlueprintToReality = () => {
                                         </motion.div>
                                     </div>
 
-                                    <p className="text-blue-200 text-sm font-mono">Completion: Q4 2024</p>
+                                    <p className="text-primary/80 text-sm font-mono">Completion: Q4 2024</p>
                                 </div>
                             </div>
 

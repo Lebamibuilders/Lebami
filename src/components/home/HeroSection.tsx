@@ -62,7 +62,7 @@ export const HeroSection = () => {
               transition={{ duration: 0.6 }}
               className="font-orbitron text-primary tracking-[0.3em] text-sm md:text-base mb-6 font-bold"
             >
-              BUILDING THE FUTURE WITH PRECISION
+              WE BUILD BIG THINGS
             </motion.p>
 
             <motion.h1
@@ -71,7 +71,7 @@ export const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="font-montserrat text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 text-white"
             >
-              Concept To Creation
+              We Make It Real
             </motion.h1>
 
             <motion.p
@@ -80,7 +80,7 @@ export const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
             >
-              The Lebami management team was established by Group of professionals with wide range of experience within respective discipline and is keenly committed team.
+              We are expert builders. We build shopping malls, offices, and big buildings. We work hard to make your building perfect.
             </motion.p>
 
             <motion.div

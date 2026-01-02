@@ -38,7 +38,7 @@ export const AboutSection = () => {
             transition={{ delay: 0.1 }}
             className="section-title text-white mb-8"
           >
-            Building Excellence
+            Strong Buildings. Good Work.
           </motion.h2>
 
           <motion.p
@@ -48,14 +48,11 @@ export const AboutSection = () => {
             transition={{ delay: 0.2 }}
             className="text-muted-foreground text-lg leading-relaxed"
           >
-            LEBAMI is a future-driven construction and engineering firm delivering architectural
-            excellence, intelligent planning, and precision-built projects across residential,
-            commercial, and infrastructure sectors. With operations spanning India and Qatar,
-            we bring world-class standards to every project.
+            Lebami builds strong places for businesses. We work in India and Qatar. We are good at making places where people work and shop. We make sure every brick and beam is right.
           </motion.p>
 
           <div className="mt-20">
-            <h3 className="font-orbitron font-bold text-3xl text-white mb-12">Our Team Experts In</h3>
+            <h3 className="font-orbitron font-bold text-3xl text-white mb-12">What We Build</h3>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
               {expertiseAreas.map((item, i) => (
@@ -67,7 +64,7 @@ export const AboutSection = () => {
                   transition={{ delay: i * 0.1 }}
                   className="flex flex-col items-center group cursor-pointer"
                 >
-                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-white/20 group-hover:border-blue-500 transition-all duration-500 relative mb-4 shadow-[0_0_20px_rgba(0,0,0,0.3)]">
+                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-white/20 group-hover:border-primary transition-all duration-500 relative mb-4 shadow-[0_0_20px_rgba(0,0,0,0.3)]">
                     <img
                       src={item.image}
                       alt={item.title}
@@ -75,19 +72,19 @@ export const AboutSection = () => {
                     />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
                   </div>
-                  <h4 className="font-orbitron font-semibold text-white/90 text-sm md:text-base max-w-[150px] leading-tight group-hover:text-blue-400 transition-colors">
+                  <h4 className="font-orbitron font-semibold text-white/90 text-sm md:text-base max-w-[150px] leading-tight group-hover:text-primary transition-colors">
                     {item.title}
                   </h4>
                 </motion.div>
               ))}
             </div>
 
-            <h3 className="font-orbitron font-bold text-2xl text-white mb-6">Quality Assurance</h3>
+            <h3 className="font-orbitron font-bold text-2xl text-white mb-6">We Check Everything</h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              We maintain a strict Quality Control System on all projects. The system includes clearly defined inspection and test plans and procedures adherent with project specifications and requirements. Plans and procedures are regularly monitored and audited, both at project and corporate levels, to ensure compliance with contractual requirements.
+              We have a strict list of checks. We check the materials. We check the work. We make sure everything follows the plan. We do this so your building is safe and lasts a long time.
             </p>
             <p className="text-muted-foreground leading-relaxed border-l-2 border-primary/50 pl-4 py-2 bg-white/5 rounded-r-lg">
-              Lebami builders & developers pvt. ltd. is committed to operating a quality management system to ensure its continuity and its development to a successful Pan-India civil contractor with prestigious and vital projects.
+              Lebami wants to be the best builder. We promise to do good work for you.
             </p>
           </div>
         </div>
