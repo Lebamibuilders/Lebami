@@ -12,63 +12,113 @@ const categories = ["All", "Residential", "Commercial", "Infrastructure"];
 const projects = [
   {
     id: 1,
-    title: "Azure Heights Villa",
+    title: "ABOOBACKAR",
     category: "Residential",
-    location: "Doha, Qatar",
+    location: "Vaniyamkulam, India",
     image: projectVilla,
-    description: "A luxury waterfront villa featuring contemporary design with panoramic ocean views, smart home integration, and sustainable building practices.",
-    scope: "Complete design and construction of a 5-bedroom luxury villa with infinity pool, landscaped gardens, and private beach access.",
-    outcome: "Delivered ahead of schedule with LEED Gold certification for sustainable construction.",
+    description: "A premium residential villa designed to offer a blend of modern aesthetics and traditional comfort, tailored to the client's specific lifestyle needs.",
+    scope: "Complete architectural design and construction supervision, including interior layout planning and landscape integration.",
+    outcome: "Successfully delivered a high-quality family residence that stands as a testament to precision engineering and design excellence.",
   },
   {
     id: 2,
-    title: "Nexus Corporate Tower",
+    title: "KASIM EAST",
     category: "Commercial",
-    location: "Mumbai, India",
+    location: "Ottapalam, India",
     image: projectCommercial,
-    description: "A 25-story corporate headquarters featuring cutting-edge architecture, energy-efficient systems, and world-class amenities.",
-    scope: "Full turnkey construction including MEP, interiors, and smart building management systems.",
-    outcome: "Achieved 40% energy savings through innovative design and won Best Commercial Building Award 2023.",
+    description: "A prominent commercial development designed to maximize space utility and provide a modern business environment.",
+    scope: "Structural design and construction management for a multi-story commercial complex.",
+    outcome: "Created a landmark commercial property that offers superior functional value and aesthetic appeal in the region.",
   },
   {
     id: 3,
-    title: "Skyline Bridge",
-    category: "Infrastructure",
-    location: "Al Wakrah, Qatar",
-    image: projectInfra,
-    description: "An iconic cable-stayed bridge spanning 800 meters, designed to become a landmark while serving critical transportation needs.",
-    scope: "Design consultation and construction management for the main bridge structure and approach roads.",
-    outcome: "Successfully completed connecting two major districts, reducing commute times by 45%.",
+    title: "ABDUL MANAF",
+    category: "Residential",
+    location: "Nellikurushi, India",
+    image: projectVilla,
+    description: "A contemporary residence built with a focus on sustainable materials and energy-efficient design principles.",
+    scope: "Turnkey construction project handling everything from foundation to final finishing works.",
+    outcome: "A beautiful, sustainable home delivered on time and within budget, exceeding client expectations.",
   },
   {
     id: 4,
-    title: "Emerald Gardens",
+    title: "BASHEER",
     category: "Residential",
-    location: "Bangalore, India",
+    location: "Kongad, India",
     image: projectVilla,
-    description: "A premium gated community featuring 120 luxury apartments with resort-style amenities and lush landscaping.",
-    scope: "Master planning, architecture, and construction of the entire township including clubhouse and recreational facilities.",
-    outcome: "100% sold out before completion, setting new benchmarks for residential quality in the region.",
+    description: "An elegant private villa featuring spacious interiors and custom design elements reflecting the client's personal taste.",
+    scope: "Architectural consultation, structural engineering, and complete project management.",
+    outcome: "A stunning residence that perfectly balances luxury with functionality.",
   },
   {
     id: 5,
-    title: "Metro Convention Center",
-    category: "Commercial",
-    location: "Delhi, India",
-    image: projectCommercial,
-    description: "A state-of-the-art convention center with flexible spaces capable of hosting international events and exhibitions.",
-    scope: "Complete design and construction including acoustics engineering, AV systems, and modular hall configurations.",
-    outcome: "Hosted G20 summit events, establishing itself as a premier venue for international gatherings.",
+    title: "PATHUTTY",
+    category: "Residential",
+    location: "Vaniyamkulam, India",
+    image: projectVilla,
+    description: "A custom-designed home focused on family living, with open spaces and distinct architectural character.",
+    scope: "Design and build service, ensuring high standards of construction quality throughout the process.",
+    outcome: "A durable and aesthetically pleasing home that serves as a comfortable haven for the family.",
   },
   {
     id: 6,
-    title: "Coastal Highway",
+    title: "SALINI AND REGHU",
+    category: "Residential",
+    location: "India",
+    image: projectVilla,
+    description: "A modern residential project emphasizing clean lines, natural light, and space optimization.",
+    scope: "Comprehensive design and construction services for a modern single-family home.",
+    outcome: "Delivered a modern architectural statement that integrates seamlessly with its surroundings.",
+  },
+  {
+    id: 7,
+    title: "MARAKKAR ALIKKAL",
+    category: "Residential",
+    location: "Kuruvattur, India",
+    image: projectVilla,
+    description: "A grand residential project showcasing exquisite craftsmanship and attention to detail in every corner.",
+    scope: "Full-service construction management, from ground-breaking to handover.",
+    outcome: "A prestigious property that highlights Lebami's commitment to quality and luxury.",
+  },
+  {
+    id: 8,
+    title: "VISWANATHAN",
+    category: "Commercial",
+    location: "Vaniyamkulam, India",
+    image: projectCommercial,
+    description: "A mixed-use development project designed to serve both residential and commercial needs effectively.",
+    scope: "Structural frame construction and exterior finishing for a multi-purpose building.",
+    outcome: "A versatile structure that adds significant value to the local infrastructure.",
+  },
+  {
+    id: 9,
+    title: "ANEESH",
+    category: "Residential",
+    location: "Ottapalam, India",
+    image: projectVilla,
+    description: "A stylish modern home designed for contemporary living, featuring smart layouts and premium finishes.",
+    scope: "Architectural design and total construction execution.",
+    outcome: "A sophisticated modern home that stands out in the neighborhood.",
+  },
+  {
+    id: 10,
+    title: "BAHSHEER",
+    category: "Residential",
+    location: "Thottakara, India",
+    image: projectVilla,
+    description: "A bespoke residential project tailored to provide maximum comfort and luxury.",
+    scope: "Detailed planning and execution of all construction phases.",
+    outcome: "A high-end residence that perfectly matches the client's vision for their dream home.",
+  },
+  {
+    id: 11,
+    title: "MASJID",
     category: "Infrastructure",
-    location: "Lusail, Qatar",
+    location: "Karakkad, India",
     image: projectInfra,
-    description: "A 12km coastal highway with integrated cycling paths, pedestrian walkways, and smart traffic management.",
-    scope: "Engineering and construction of the highway including drainage systems, lighting, and landscaping.",
-    outcome: "Improved coastal connectivity while creating a scenic recreational corridor for the community.",
+    description: "A community mosque project designed with traditional architectural elements and modern construction techniques.",
+    scope: "Construction of the main prayer hall and associated facilities, ensuring structural integrity and aesthetic reverence.",
+    outcome: "A beautifully constructed community space that serves as a spiritual center for the locality.",
   },
 ];
 
@@ -76,8 +126,8 @@ const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
-  const filteredProjects = activeCategory === "All" 
-    ? projects 
+  const filteredProjects = activeCategory === "All"
+    ? projects
     : projects.filter(p => p.category === activeCategory);
 
   return (
@@ -98,7 +148,7 @@ const Projects = () => {
               Built Reality
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Explore our portfolio of landmark projects spanning residential, 
+              Explore our portfolio of landmark projects spanning residential,
               commercial, and infrastructure sectors across India and Qatar.
             </p>
           </motion.div>
@@ -113,11 +163,10 @@ const Projects = () => {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-6 py-3 font-orbitron text-sm tracking-wider transition-all duration-300 rounded-lg ${
-                  activeCategory === category
+                className={`px-6 py-3 font-orbitron text-sm tracking-wider transition-all duration-300 rounded-lg ${activeCategory === category
                     ? "bg-gradient-to-r from-primary to-secondary text-foreground"
                     : "glass-panel text-muted-foreground hover:text-foreground hover:border-primary/50"
-                }`}
+                  }`}
               >
                 {category}
               </button>
@@ -154,7 +203,7 @@ const Projects = () => {
                     />
                     <div className="image-overlay" />
                     <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-500" />
-                    
+
                     <div className="absolute bottom-0 left-0 right-0 p-6">
                       <span className="inline-block px-3 py-1 text-xs font-orbitron tracking-wider bg-primary/20 text-primary rounded-full mb-3 border border-primary/30">
                         {project.category}
@@ -167,7 +216,7 @@ const Projects = () => {
                         {project.location}
                       </p>
                     </div>
-                    
+
                     <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-primary/50 transition-colors duration-500" />
                   </div>
                 </motion.div>
@@ -208,42 +257,42 @@ const Projects = () => {
                   <X className="w-5 h-5" />
                 </button>
               </div>
-              
+
               <div className="p-8">
                 <span className="inline-block px-3 py-1 text-xs font-orbitron tracking-wider bg-primary/20 text-primary rounded-full mb-4 border border-primary/30">
                   {selectedProject.category}
                 </span>
-                
+
                 <h2 className="font-orbitron text-3xl font-bold text-foreground mb-2">
                   {selectedProject.title}
                 </h2>
-                
+
                 <p className="text-muted-foreground flex items-center gap-1 mb-6">
                   <MapPin className="w-4 h-4" />
                   {selectedProject.location}
                 </p>
-                
+
                 <div className="space-y-6">
                   <div>
                     <h3 className="font-orbitron text-lg font-semibold text-primary mb-2">Overview</h3>
                     <p className="text-muted-foreground leading-relaxed">{selectedProject.description}</p>
                   </div>
-                  
+
                   <div className="glow-line" />
-                  
+
                   <div>
                     <h3 className="font-orbitron text-lg font-semibold text-primary mb-2">Scope</h3>
                     <p className="text-muted-foreground leading-relaxed">{selectedProject.scope}</p>
                   </div>
-                  
+
                   <div className="glow-line" />
-                  
+
                   <div>
                     <h3 className="font-orbitron text-lg font-semibold text-primary mb-2">Outcome</h3>
                     <p className="text-muted-foreground leading-relaxed">{selectedProject.outcome}</p>
                   </div>
                 </div>
-                
+
                 <div className="mt-8">
                   <Link to="/contact" className="btn-neon">
                     <span className="flex items-center gap-2">

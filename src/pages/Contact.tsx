@@ -1,25 +1,15 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { GlassCard } from "@/components/GlassCard";
-import { MapPin, Phone, Mail, Send, Linkedin, Twitter, Instagram } from "lucide-react";
+import { MapPin, Phone, Mail, Send, Facebook, Youtube, Instagram } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-
-const projectTypes = [
-  "Residential",
-  "Commercial",
-  "Infrastructure",
-  "Renovation",
-  "Consultation",
-  "Other",
-];
 
 const Contact = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
-    projectType: "",
+    subject: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -31,16 +21,16 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1500));
-    
+
     toast({
       title: "Message Sent Successfully!",
       description: "We'll get back to you within 24 hours.",
     });
-    
-    setFormData({ name: "", email: "", phone: "", projectType: "", message: "" });
+
+    setFormData({ name: "", email: "", subject: "", message: "" });
     setIsSubmitting(false);
   };
 
@@ -62,7 +52,7 @@ const Contact = () => {
               Let's Build Together
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Ready to transform your vision into reality? Reach out to our team 
+              Ready to transform your vision into reality? Reach out to our team
               and let's discuss your next project.
             </p>
           </motion.div>
@@ -82,13 +72,13 @@ const Contact = () => {
               <GlassCard hover={false}>
                 <form onSubmit={handleSubmit} className="p-8 space-y-6">
                   <h2 className="font-orbitron text-2xl font-semibold gradient-text mb-6">
-                    Send an Enquiry
+                    Send Us A Message
                   </h2>
-                  
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-muted-foreground mb-2">
-                        Full Name *
+                        Name *
                       </label>
                       <input
                         type="text"
@@ -97,12 +87,12 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 bg-muted/50 border border-border rounded-lg focus:outline-none focus:border-primary transition-colors text-foreground"
-                        placeholder="John Doe"
+                        placeholder="Name"
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-muted-foreground mb-2">
-                        Email Address *
+                        Email *
                       </label>
                       <input
                         type="email"
@@ -111,46 +101,29 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 bg-muted/50 border border-border rounded-lg focus:outline-none focus:border-primary transition-colors text-foreground"
-                        placeholder="john@example.com"
+                        placeholder="Email"
                       />
                     </div>
                   </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-muted-foreground mb-2">
-                        Phone Number
-                      </label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-muted/50 border border-border rounded-lg focus:outline-none focus:border-primary transition-colors text-foreground"
-                        placeholder="+91 98765 43210"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-muted-foreground mb-2">
-                        Project Type
-                      </label>
-                      <select
-                        name="projectType"
-                        value={formData.projectType}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-muted/50 border border-border rounded-lg focus:outline-none focus:border-primary transition-colors text-foreground"
-                      >
-                        <option value="">Select a type</option>
-                        {projectTypes.map((type) => (
-                          <option key={type} value={type}>{type}</option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-muted-foreground mb-2">
-                      Your Message *
+                      Subject *
+                    </label>
+                    <input
+                      type="text"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 bg-muted/50 border border-border rounded-lg focus:outline-none focus:border-primary transition-colors text-foreground"
+                      placeholder="Subject"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-muted-foreground mb-2">
+                      Comment or Message *
                     </label>
                     <textarea
                       name="message"
@@ -159,17 +132,17 @@ const Contact = () => {
                       required
                       rows={5}
                       className="w-full px-4 py-3 bg-muted/50 border border-border rounded-lg focus:outline-none focus:border-primary transition-colors text-foreground resize-none"
-                      placeholder="Tell us about your project..."
+                      placeholder="Your thoughts"
                     />
                   </div>
-                  
+
                   <button
                     type="submit"
                     disabled={isSubmitting}
                     className="btn-neon w-full disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <span className="flex items-center justify-center gap-2">
-                      {isSubmitting ? "Sending..." : "Send Enquiry"}
+                      {isSubmitting ? "Sending..." : "Send Message"}
                       <Send className="w-4 h-4" />
                     </span>
                   </button>
@@ -192,12 +165,11 @@ const Contact = () => {
                       <MapPin className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-orbitron text-lg font-semibold text-foreground mb-2">Our Offices</h3>
-                      <p className="text-muted-foreground mb-1">
-                        <strong className="text-foreground">India:</strong> Mumbai, Maharashtra
-                      </p>
-                      <p className="text-muted-foreground">
-                        <strong className="text-foreground">Qatar:</strong> Doha, Qatar
+                      <h3 className="font-orbitron text-lg font-semibold text-foreground mb-2">Visit Us</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Lebami Builders And Developers,<br />
+                        Upasana Arcade, Thottakkara,<br />
+                        Ottapalam, Kerala
                       </p>
                     </div>
                   </div>
@@ -211,12 +183,9 @@ const Contact = () => {
                       <Phone className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-orbitron text-lg font-semibold text-foreground mb-2">Call Us</h3>
-                      <a href="tel:+919876543210" className="text-muted-foreground hover:text-primary transition-colors block">
-                        +91 98765 43210
-                      </a>
-                      <a href="tel:+97412345678" className="text-muted-foreground hover:text-primary transition-colors block">
-                        +974 1234 5678
+                      <h3 className="font-orbitron text-lg font-semibold text-foreground mb-2">Give Us a Call</h3>
+                      <a href="tel:+917025720002" className="text-muted-foreground hover:text-primary transition-colors block">
+                        +91 70257 20002
                       </a>
                     </div>
                   </div>
@@ -231,26 +200,54 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-orbitron text-lg font-semibold text-foreground mb-2">Email Us</h3>
-                      <a href="mailto:info@lebami.com" className="text-muted-foreground hover:text-primary transition-colors block">
-                        info@lebami.com
-                      </a>
-                      <a href="mailto:projects@lebami.com" className="text-muted-foreground hover:text-primary transition-colors block">
-                        projects@lebami.com
+                      <a href="mailto:info@lebami.in" className="text-muted-foreground hover:text-primary transition-colors block">
+                        info@lebami.in
                       </a>
                     </div>
                   </div>
                 </div>
               </GlassCard>
 
-              {/* Social Links */}
               <GlassCard delay={0.3}>
                 <div className="p-6">
-                  <h3 className="font-orbitron text-lg font-semibold text-foreground mb-4">Follow Us</h3>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center shrink-0">
+                      <MapPin className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-orbitron text-lg font-semibold text-foreground mb-2">Other Locations</h3>
+                      <div className="space-y-4">
+                        <div>
+                          <strong className="text-primary block mb-1">India</strong>
+                          <p className="text-muted-foreground text-sm">
+                            Lebami Builders And Developers,<br />
+                            Upasana Arcade, Thottakkara,<br />
+                            Ottapalam, Kerala
+                          </p>
+                        </div>
+                        <div>
+                          <strong className="text-primary block mb-1">Qatar</strong>
+                          <p className="text-muted-foreground text-sm">
+                            Lebami Builders And Developers,<br />
+                            building 248 streetn790,<br />
+                            Doha, Qatar
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </GlassCard>
+
+              {/* Social Links */}
+              <GlassCard delay={0.4}>
+                <div className="p-6">
+                  <h3 className="font-orbitron text-lg font-semibold text-foreground mb-4">Follow us here</h3>
                   <div className="flex gap-4">
                     {[
-                      { icon: Linkedin, href: "#", label: "LinkedIn" },
-                      { icon: Twitter, href: "#", label: "Twitter" },
+                      { icon: Facebook, href: "#", label: "Facebook" },
                       { icon: Instagram, href: "#", label: "Instagram" },
+                      { icon: Youtube, href: "#", label: "Youtube" },
                     ].map((social) => (
                       <a
                         key={social.label}

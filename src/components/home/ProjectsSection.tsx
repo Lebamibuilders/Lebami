@@ -6,34 +6,24 @@ import projectCommercial from "@/assets/project-commercial.jpg";
 import projectInfra from "@/assets/project-infrastructure.jpg";
 
 const projects = [
-  {
-    id: 1,
-    title: "Azure Heights Villa",
-    category: "Residential",
-    location: "Qatar",
-    image: projectVilla,
-  },
-  {
-    id: 2,
-    title: "Nexus Corporate Tower",
-    category: "Commercial",
-    location: "India",
-    image: projectCommercial,
-  },
-  {
-    id: 3,
-    title: "Skyline Bridge",
-    category: "Infrastructure",
-    location: "Qatar",
-    image: projectInfra,
-  },
+  { id: 1, title: "ABOOBACKAR", category: "VANIYAMKULAM", location: "India", image: projectVilla },
+  { id: 2, title: "KASIM EAST", category: "OTTAPALAM", location: "India", image: projectCommercial },
+  { id: 3, title: "ABDUL MANAF", category: "NELLIKURUSHI", location: "India", image: projectInfra },
+  { id: 4, title: "BASHEER", category: "KONGAD", location: "India", image: projectVilla },
+  { id: 5, title: "PATHUTTY", category: "VANIYAMKULAM", location: "India", image: projectCommercial },
+  { id: 6, title: "SALINI AND REGHU", category: "Residential", location: "India", image: projectInfra },
+  { id: 7, title: "MARAKKAR ALIKKAL", category: "KURUVATTUR", location: "India", image: projectVilla },
+  { id: 8, title: "VISWANATHAN", category: "VANIYAMKULAM", location: "India", image: projectCommercial },
+  { id: 9, title: "ANEESH", category: "OTTAPALAM", location: "India", image: projectInfra },
+  { id: 10, title: "BAHSHEER", category: "THOTTAKARA", location: "India", image: projectVilla },
+  { id: 11, title: "MASJID", category: "KARAKKAD", location: "India", image: projectCommercial },
 ];
 
 export const ProjectsSection = () => {
   return (
     <section className="py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
-      
+
       <div className="container mx-auto px-6 relative">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
           <div>
@@ -45,7 +35,7 @@ export const ProjectsSection = () => {
             >
               OUR WORK
             </motion.p>
-            
+
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -53,10 +43,10 @@ export const ProjectsSection = () => {
               transition={{ delay: 0.1 }}
               className="section-title gradient-text"
             >
-              Built Reality
+              Project Gallery
             </motion.h2>
           </div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -92,18 +82,18 @@ export const ProjectsSection = () => {
                   />
                   <div className="image-overlay" />
                   <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-500" />
-                  
+
                   {/* Content */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <span className="inline-block px-3 py-1 text-xs font-orbitron tracking-wider bg-primary/20 text-primary rounded-full mb-3 border border-primary/30">
+                  <div className="absolute bottom-4 left-4 right-4 p-4 glass-panel backdrop-blur-md bg-white/10 border border-white/20 rounded-xl transition-all duration-300 group-hover:bg-white/20">
+                    <span className="inline-block px-3 py-1 text-xs font-orbitron tracking-wider bg-black/40 text-primary rounded-full mb-2 border border-primary/30">
                       {project.category}
                     </span>
-                    <h3 className="font-orbitron text-xl font-semibold text-foreground mb-1">
+                    <h3 className="font-orbitron text-lg font-semibold text-white mb-1">
                       {project.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm">{project.location}</p>
+                    <p className="text-gray-300 text-xs">{project.location}</p>
                   </div>
-                  
+
                   {/* Hover Border Glow */}
                   <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-primary/50 transition-colors duration-500" />
                 </div>

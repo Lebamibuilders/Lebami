@@ -35,21 +35,18 @@ export const Navbar = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "nav-glass py-3" : "py-6"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "nav-glass py-2" : "py-4"
+          }`}
       >
-        <div className="container mx-auto px-6 flex items-center justify-between">
+        <div className="container mx-auto px-6 flex items-center justify-between relative min-h-[50px]">
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                <span className="font-orbitron font-bold text-foreground text-lg">L</span>
-              </div>
-              <div className="absolute inset-0 bg-primary/30 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative h-16">
+              <img
+                src="/lebami_logo.png"
+                alt="LEBAMI"
+                className="h-full w-auto object-contain"
+              />
             </div>
-            <span className="font-orbitron font-bold text-xl tracking-widest text-foreground">
-              LEBAMI
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -58,11 +55,10 @@ export const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`relative font-inter text-sm tracking-wider uppercase transition-colors duration-300 ${
-                  location.pathname === link.path
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
+                className={`relative font-inter text-sm tracking-wider uppercase transition-colors duration-300 ${location.pathname === link.path
+                  ? "text-primary"
+                  : "text-muted-foreground hover:text-foreground"
+                  }`}
               >
                 {link.name}
                 {location.pathname === link.path && (
@@ -73,12 +69,6 @@ export const Navbar = () => {
                 )}
               </Link>
             ))}
-            <Link
-              to="/contact"
-              className="btn-neon ml-4"
-            >
-              <span>Get Quote</span>
-            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -111,19 +101,15 @@ export const Navbar = () => {
                 >
                   <Link
                     to={link.path}
-                    className={`block py-3 font-orbitron text-lg tracking-wider ${
-                      location.pathname === link.path
-                        ? "text-primary"
-                        : "text-foreground"
-                    }`}
+                    className={`block py-3 font-orbitron text-lg tracking-wider ${location.pathname === link.path
+                      ? "text-primary"
+                      : "text-foreground"
+                      }`}
                   >
                     {link.name}
                   </Link>
                 </motion.div>
               ))}
-              <Link to="/contact" className="btn-neon w-full text-center mt-4 block">
-                <span>Get Quote</span>
-              </Link>
             </div>
           </motion.div>
         )}

@@ -17,8 +17,15 @@ const galleryImages = [
   { id: 8, src: heroImage, title: "Innovation Hub", category: "Commercial" },
 ];
 
+const categories = ["All", "Residential", "Commercial", "Infrastructure"];
+
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const filteredImages = activeCategory === "All"
+    ? galleryImages
+    : galleryImages.filter(img => img.category === activeCategory);
 
   const handlePrev = () => {
     if (selectedImage === null) return;
@@ -48,44 +55,72 @@ const Gallery = () => {
               Project Gallery
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Explore our collection of architectural achievements and 
+              Explore our collection of architectural achievements and
               construction excellence through stunning visuals.
             </p>
           </motion.div>
         </div>
       </section>
 
+      {/* Filter Section */}
+      <section className="py-8">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-wrap justify-center gap-4">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`px-6 py-3 font-orbitron text-sm tracking-wider transition-all duration-300 rounded-lg ${activeCategory === category
+                    ? "bg-gradient-to-r from-primary to-secondary text-foreground shadow-[0_0_20px_rgba(0,102,255,0.3)]"
+                    : "glass-panel text-muted-foreground hover:text-foreground hover:border-primary/50"
+                  }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Gallery Grid */}
       <section className="py-12 relative">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {galleryImages.map((image, i) => (
-              <motion.div
-                key={image.id}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                whileHover={{ scale: 1.02 }}
-                className="group cursor-pointer relative aspect-square rounded-xl overflow-hidden glass-panel"
-                onClick={() => setSelectedImage(i)}
-              >
-                <img
-                  src={image.src}
-                  alt={image.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute inset-0 flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div>
-                    <span className="text-xs font-orbitron text-primary">{image.category}</span>
-                    <h3 className="font-orbitron text-sm font-semibold text-foreground">{image.title}</h3>
+          <motion.div
+            layout
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+          >
+            <AnimatePresence mode="popLayout">
+              {filteredImages.map((image) => (
+                <motion.div
+                  key={image.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.3 }}
+                  whileHover={{ scale: 1.02 }}
+                  className="group cursor-pointer relative aspect-square rounded-xl overflow-hidden glass-panel"
+                  onClick={() => setSelectedImage(galleryImages.indexOf(image))}
+                >
+                  <img
+                    src={image.src}
+                    alt={image.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div>
+                      <span className="text-xs font-orbitron text-primary bg-primary/10 px-2 py-1 rounded-full border border-primary/20 backdrop-blur-sm mb-2 inline-block">
+                        {image.category}
+                      </span>
+                      <h3 className="font-orbitron text-sm font-semibold text-foreground">{image.title}</h3>
+                    </div>
                   </div>
-                </div>
-                <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-primary/50 transition-colors duration-500" />
-              </motion.div>
-            ))}
-          </div>
+                  <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-primary/50 transition-colors duration-500" />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
         </div>
       </section>
 

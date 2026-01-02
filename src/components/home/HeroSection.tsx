@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-building.jpg";
+import { GlassCard } from "@/components/GlassCard";
 
 export const HeroSection = () => {
   return (
@@ -19,6 +20,15 @@ export const HeroSection = () => {
 
       {/* Grid Background */}
       <div className="grid-bg" />
+      <div className="absolute inset-0 bg-blueprint opacity-20 pointer-events-none" />
+
+      {/* Technical Line Animation */}
+      <motion.div
+        initial={{ width: 0 }}
+        animate={{ width: "100%" }}
+        transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+        className="absolute top-1/3 left-0 h-px bg-primary/30 blur-[1px]"
+      />
 
       {/* Particles */}
       <div className="particles">
@@ -39,60 +49,52 @@ export const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-6 relative z-10 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-5xl mx-auto"
-        >
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="font-orbitron text-primary tracking-[0.3em] text-sm md:text-base mb-6"
-          >
-            ARCHITECTURE • PLANNING • CONSTRUCTION
-          </motion.p>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="font-orbitron text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8"
-          >
-            <span className="gradient-text">Engineering the Future.</span>
-            <br />
-            <span className="text-foreground">Building Tomorrow.</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
-          >
-            Delivering architectural excellence, intelligent planning, and precision-built 
-            projects across residential, commercial, and infrastructure sectors.
-          </motion.p>
-
+      <div className="container mx-auto px-6 relative z-10 text-center flex justify-center items-center min-h-[calc(100vh-100px)]">
+        <GlassCard className="max-w-4xl mx-auto p-12 md:p-20 border-opacity-20 bg-opacity-10 backdrop-blur-xl">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <Link to="/projects" className="btn-neon">
-              <span className="flex items-center gap-2">
-                View Our Projects
-                <ArrowRight className="w-4 h-4" />
-              </span>
-            </Link>
-            <Link to="/contact" className="btn-glass">
-              <span>Get a Consultation</span>
-            </Link>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="font-orbitron text-primary tracking-[0.3em] text-sm md:text-base mb-6 font-bold"
+            >
+              BUILDING THE FUTURE WITH PRECISION
+            </motion.p>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="font-montserrat text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 text-white"
+            >
+              Concept To Creation
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
+            >
+              The Lebami management team was established by Group of professionals with wide range of experience within respective discipline and is keenly committed team.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <Link to="/contact" className="btn-neon">
+                <span>Request a Quote</span>
+              </Link>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </GlassCard>
 
         {/* Scroll Indicator */}
         <motion.div

@@ -64,6 +64,7 @@ export default {
         },
       },
       fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
         orbitron: ["Orbitron", "sans-serif"],
         inter: ["Inter", "sans-serif"],
       },
@@ -108,6 +109,10 @@ export default {
         float: {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
+        },
+        "draw-line": {
+          "0%": { width: "0%" },
+          "100%": { width: "100%" },
         },
       },
       animation: {

@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { GlassCard } from "@/components/GlassCard";
 import { Link } from "react-router-dom";
-import { 
-  PenTool, 
-  FileSearch, 
-  HardHat, 
-  Home, 
-  Building2, 
+import {
+  PenTool,
+  FileSearch,
+  HardHat,
+  Home,
+  Building2,
   Mountain,
   ArrowRight,
   CheckCircle
@@ -14,87 +14,61 @@ import {
 
 const services = [
   {
-    id: "architecture",
+    id: "design-development",
     icon: PenTool,
-    title: "Architecture & Design",
-    subtitle: "Visionary Concepts, Timeless Designs",
-    description: "From initial concept to detailed design, we create architectural masterpieces that blend innovation with functionality. Our team brings decades of experience in crafting spaces that inspire.",
+    title: "DESIGN DEVELOPMENT",
+    subtitle: "Innovation in Design & Execution",
+    description: "The innovation is explicitly visible in the design development and the presentation of Lebami builders & developers pvt. ltd. The architectural, electrical, mechanical and structural systems are made to perfectly blend with the whole design concept; with a clear focus on implementation, execution and estimation.",
     features: [
-      "Conceptual design & ideation",
-      "3D walkthroughs & visualization",
-      "Master planning",
-      "Sustainable design integration",
-      "Interior design coordination",
+      "Architecture & Planning",
+      "Site Evaluation and Analysis",
+      "Preliminary Design, Report and Presentation",
+      "Detailed Design and Reports",
+      "Presentation Drawings",
+      "Walkthroughs & Animation",
+      "Architectural Scale Models",
+      "Master Plans",
+      "Urban Design & Applications",
+      "Zonal Development Plan",
+      "Township Housing / Low Cost Housing / Villa Project",
+      "Technical & Financial Feasibility Study",
+      "Heritage & Conservation",
+      "Redevelopment & Revitalization",
+      "Regional Planning"
     ],
   },
   {
-    id: "planning",
-    icon: FileSearch,
-    title: "Planning & Feasibility",
-    subtitle: "Data-Driven Decision Making",
-    description: "Comprehensive analysis and planning services that ensure your project is viable, compliant, and optimized for success from day one.",
-    features: [
-      "Site analysis & evaluation",
-      "Zoning & regulatory compliance",
-      "Feasibility studies",
-      "Cost estimation",
-      "Risk assessment",
-    ],
-  },
-  {
-    id: "construction",
+    id: "construction-development",
     icon: HardHat,
-    title: "Construction Management",
-    subtitle: "Precision Execution, Every Time",
-    description: "End-to-end project management ensuring quality, timeline adherence, and budget optimization throughout the construction lifecycle.",
+    title: "CONSTRUCTION DEVELOPMENT",
+    subtitle: "Partners in Building Success",
+    description: "Lebami work as a Construction Manager’s and Project Manager’s for our clients on a routine basis. Becoming part of the team to work effectively towards the successful completion of the projects goal. Our years of experience in preliminary design, estimating and construction stages have enabled us to become solid partners focused on the needs of our clients. Building a team between the owner, architect and general contractor promotes the development of a harmonious working relationship and a unified focus toward the successful completion of the project",
     features: [
-      "Project scheduling & coordination",
-      "Quality control & assurance",
-      "Safety management",
-      "Vendor & subcontractor management",
-      "Progress reporting & documentation",
-    ],
-  },
-  {
-    id: "residential",
-    icon: Home,
-    title: "Residential Projects",
-    subtitle: "Crafting Dream Homes",
-    description: "Luxury villas, modern apartments, and bespoke residential developments that combine comfort, elegance, and modern living standards.",
-    features: [
-      "Luxury villas & bungalows",
-      "Apartment complexes",
-      "Gated communities",
-      "Smart home integration",
-      "Landscape design",
-    ],
-  },
-  {
-    id: "commercial",
-    icon: Building2,
-    title: "Commercial & Public Buildings",
-    subtitle: "Spaces That Drive Business",
-    description: "Corporate offices, retail spaces, educational institutions, and public buildings designed for functionality and visual impact.",
-    features: [
-      "Corporate headquarters",
-      "Retail & shopping centers",
-      "Educational institutions",
-      "Healthcare facilities",
-      "Convention centers",
-    ],
-  },
-  {
-    id: "infrastructure",
-    icon: Mountain,
-    title: "Infrastructure & Land Development",
-    subtitle: "Building Foundations for Growth",
-    description: "Large-scale infrastructure projects and land development that shape communities and drive regional development.",
-    features: [
-      "Township development",
-      "Roads & bridges",
-      "Utilities & networks",
-      "Industrial parks",
-      "Urban redevelopment",
+      "Residential Villa Project",
+      "Multi-family Residential Complexes",
+      "Multi-family Residential Villa Project",
+      "Convention Centers",
+      "Commercial Buildings",
+      "Resort Projects",
+      "Specialty Retail Buildings",
+      "Class A Office Buildings",
+      "Banking",
+      "Performing Arts Centers",
+      "Public Safety Facilities",
+      "Government Facilities",
+      "Student Life Facilities",
+      "Field Houses and Athletic Facilities",
+      "Turf football Stadiums",
+      "Recreation and Fitness Centers",
+      "Dining Commons",
+      "Campus Energy",
+      "Campus Infrastructure",
+      "Secondary Education school office",
+      "Pharmacies",
+      "Corporate Interiors",
+      "Residential Interiors",
+      "Commercial Interiors",
+      "Land Development"
     ],
   },
 ];
@@ -118,8 +92,7 @@ const Services = () => {
               Comprehensive Construction Solutions
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              From concept to completion, we offer end-to-end services that transform 
-              your vision into built reality with precision and excellence.
+              The Lebami Management team was established by Group of professionals with wide range of experience within respective discipline and is keenly committed team, who deals with reputed companies in India as well as in Middle East
             </p>
           </motion.div>
         </div>
@@ -138,9 +111,8 @@ const Services = () => {
                 transition={{ delay: 0.1 }}
                 id={service.id}
               >
-                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                  i % 2 === 1 ? "lg:flex-row-reverse" : ""
-                }`}>
+                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? "lg:flex-row-reverse" : ""
+                  }`}>
                   {/* Content */}
                   <div className={i % 2 === 1 ? "lg:order-2" : ""}>
                     <div className="flex items-center gap-4 mb-6">
@@ -154,11 +126,11 @@ const Services = () => {
                         <p className="text-primary text-sm font-medium">{service.subtitle}</p>
                       </div>
                     </div>
-                    
+
                     <p className="text-muted-foreground text-lg leading-relaxed mb-8">
                       {service.description}
                     </p>
-                    
+
                     <Link
                       to="/contact"
                       className="btn-neon inline-flex"

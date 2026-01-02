@@ -16,17 +16,17 @@ const values = [
   {
     icon: Eye,
     title: "Vision",
-    description: "To be the leading force in transforming architectural dreams into sustainable, future-ready structures that define skylines and inspire communities.",
+    description: "To enrich your dreams, with our authentic products and elegant services. Our effort is firmly to unified our serves continually and reach to a global outfit of recognition by providing extreme quality service and excellent products.",
   },
   {
     icon: Target,
     title: "Mission",
-    description: "Delivering exceptional construction solutions through innovative design, precision engineering, and unwavering commitment to quality and client satisfaction.",
+    description: "We divulge keenly on our products and service for our customer. We constantly strive and explore to acquire most innovative products to our customers, who were utmost priority for us",
   },
   {
-    icon: Heart,
-    title: "Philosophy",
-    description: "We believe that every structure tells a story. Our philosophy centers on creating spaces that harmonize functionality, aesthetics, and sustainability.",
+    icon: Shield, // Changing icon to Shield or Users for Team if available, keeping Shield/Heart existing import
+    title: "Project Team",
+    description: "We have a team of experts, dynamic and innovative Engineers and Designers who customize and tailor the services according to the Requirement of the clients. They are well conversant with International Standards and Codes in the relevant discipline of engineering. They blend skill and experience to offer high quality and faster detailing Services.",
   },
 ];
 
@@ -56,7 +56,7 @@ const About = () => {
               Engineering Excellence Since 2014
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              A decade of transforming visions into landmark structures across 
+              A decade of transforming visions into landmark structures across
               India and Qatar, setting new standards in construction excellence.
             </p>
           </motion.div>
@@ -116,7 +116,7 @@ const About = () => {
                 <Globe className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h3 className="font-orbitron text-2xl font-semibold mb-3 text-foreground">India</h3>
                 <p className="text-muted-foreground">
-                  Headquarters and primary operations spanning multiple states, 
+                  Headquarters and primary operations spanning multiple states,
                   delivering residential, commercial, and infrastructure projects.
                 </p>
               </div>
@@ -126,7 +126,7 @@ const About = () => {
                 <Globe className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h3 className="font-orbitron text-2xl font-semibold mb-3 text-foreground">Qatar</h3>
                 <p className="text-muted-foreground">
-                  Strategic Middle East operations focusing on luxury residential 
+                  Strategic Middle East operations focusing on luxury residential
                   and landmark commercial developments.
                 </p>
               </div>
@@ -160,7 +160,7 @@ const About = () => {
 
           <div className="relative max-w-3xl mx-auto">
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-primary/20" />
-            
+
             {timeline.map((item, i) => (
               <motion.div
                 key={item.year}
@@ -168,14 +168,13 @@ const About = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className={`relative flex items-center mb-8 ${
-                  i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
+                className={`relative flex items-center mb-8 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                  }`}
               >
                 <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 z-10">
                   <div className="timeline-node" />
                 </div>
-                
+
                 <div className={`ml-12 md:ml-0 md:w-1/2 ${i % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
                   <div className="glass-panel p-4">
                     <span className="font-orbitron text-primary font-bold">{item.year}</span>
