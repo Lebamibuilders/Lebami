@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 
 
 const expertiseAreas = [
-  { title: "International Stadium Projects", image: "https://images.unsplash.com/photo-1487466365202-1afdb86c764e?q=80&w=2070&auto=format&fit=crop" },
-  { title: "Roads & Infra Projects", image: "https://images.unsplash.com/photo-1545276070-ec815f01c687?q=80&w=2070&auto=format&fit=crop" },
-  { title: "Airport Runway Projects", image: "https://images.unsplash.com/photo-1570710891163-6d3b5c47248b?q=80&w=2070&auto=format&fit=crop" },
-  { title: "Airport Building Projects", image: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?q=80&w=2070&auto=format&fit=crop" },
-  { title: "High Rise Building Projects", image: "https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=2074&auto=format&fit=crop" },
-  { title: "PEB / Steel Structures", image: "https://plus.unsplash.com/premium_photo-1661962692059-55d5a4319814?q=80&w=2070&auto=format&fit=crop" },
-  { title: "Military Base Projects", image: "https://images.unsplash.com/photo-1559627755-6677c77d4db2?q=80&w=2042&auto=format&fit=crop" },
-  { title: "Residential Villa Projects", image: "https://images.unsplash.com/photo-1600596542815-2a4d04774c71?q=80&w=2075&auto=format&fit=crop" },
+  { title: "International Stadium Projects", image: "https://images.unsplash.com/photo-1556608778-43e5bd83a808?auto=format&fit=crop&q=80&w=800" }, // Illuminated Stadium
+  { title: "Roads & Infra Projects", image: "https://images.unsplash.com/photo-1496347312870-5a05b63001dd?auto=format&fit=crop&q=80&w=800" }, // Bridge/Highway
+  { title: "Airport Runway Projects", image: "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&q=80&w=800" }, // Runway Tarmac
+  { title: "Airport Building Projects", image: "https://images.unsplash.com/photo-1556388275-bb5585725aca?auto=format&fit=crop&q=80&w=800" }, // Airport Terminal
+  { title: "High Rise Building Projects", image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80&w=800" }, // Modern Skyscraper
+  { title: "PEB / Steel Structures", image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800" }, // Steel Frame Construction
+  { title: "Military Base Projects", image: "https://images.unsplash.com/photo-1556636750-61f67f33d739?auto=format&fit=crop&q=80&w=800" }, // Hangar/Aircraft (Generic Military feel)
+  { title: "Residential Villa Projects", image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&q=80&w=800" }, // Modern Luxury Villa
 ];
 
 export const AboutSection = () => {
