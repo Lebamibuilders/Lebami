@@ -5,7 +5,7 @@ const expertiseAreas = [
   { title: "International Stadium Projects", image: "/stadium-update.png" }, // User provided stadium image
   { title: "Roads & Infra Projects", image: "/road.png" }, // Local file
   { title: "Airport Runway Projects", image: "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&q=80&w=800" }, // Runway Tarmac
-  { title: "Airport Building Projects", image: "https://images.unsplash.com/photo-1556388275-bb5585725aca?auto=format&fit=crop&q=80&w=800" }, // Airport Terminal
+  { title: "Airport Building Projects", image: "/airport-building.png" }, // Local file (New download)
   { title: "High Rise Building Projects", image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80&w=800" }, // Modern Skyscraper
   { title: "PEB / Steel Structures", image: "/steel.png" }, // Local file
   { title: "Military Base Projects", image: "/miltary.png" }, // Local file (preserving user requested filename)
