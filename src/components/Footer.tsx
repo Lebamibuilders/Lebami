@@ -25,15 +25,24 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-orbitron font-semibold mb-6 text-foreground">Quick Links</h4>
-            <ul className="space-y-3">
-              {["Home", "About", "Services", "Projects", "Our Completed Projects", "Gallery", "Contact"].map((item) => (
-                <li key={item}>
+            <h4 className="font-orbitron text-lg font-semibold mb-6 text-foreground">Quick Links</h4>
+            <ul className="space-y-4">
+              {[
+                { name: "Home", path: "/" },
+                { name: "About Us", path: "/about" },
+                { name: "Services", path: "/services" },
+                { name: "Projects", path: "/projects" },
+                { name: "Gallery", path: "/gallery" },
+                { name: "Contact", path: "/contact" },
+              ].map((link) => (
+                <li key={link.name}>
                   <Link
-                    to={`/${item.toLowerCase().replace(/ /g, "-")}`}
-                    className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                    to={link.path}
+                    className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"
+                    onClick={() => window.scrollTo(0, 0)}
                   >
-                    {item}
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors" />
+                    {link.name}
                   </Link>
                 </li>
               ))}
