@@ -13,7 +13,7 @@ export const Footer = () => {
           <div>
             <Link to="/" className="flex items-center gap-3 mb-6">
               <img
-                src="/ic.png"
+                src="/lebami_logo.png"
                 alt="LEBAMI"
                 className="h-12 w-auto object-contain"
               />
