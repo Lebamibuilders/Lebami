@@ -23,17 +23,17 @@ export const ProjectsSection = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
-    <section className="py-32 relative overflow-hidden">
+    <section className="py-16 md:py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
 
-      <div className="container mx-auto px-6 relative">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
+      <div className="container mx-auto px-4 md:px-6 relative">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16 gap-6">
           <div>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-orbitron text-primary tracking-[0.3em] text-sm mb-4"
+              className="font-orbitron text-primary tracking-[0.3em] text-xs md:text-sm mb-4"
             >
               OUR WORK
             </motion.p>
@@ -43,7 +43,7 @@ export const ProjectsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="section-title gradient-text"
+              className="section-title gradient-text text-3xl md:text-5xl"
             >
               Project Gallery
             </motion.h2>
@@ -57,14 +57,14 @@ export const ProjectsSection = () => {
           >
             <Link
               to="/projects"
-              className="inline-flex items-center gap-2 text-primary font-orbitron text-sm tracking-wider hover:gap-3 transition-all duration-300"
+              className="inline-flex items-center gap-2 text-primary font-orbitron text-sm tracking-wider hover:gap-3 transition-all duration-300 bg-primary/10 px-4 py-2 rounded-full border border-primary/20"
             >
-              View All Projects <ArrowRight className="w-4 h-4" />
+              View Full Gallery <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, i) => (
             <motion.div
               key={project.id}

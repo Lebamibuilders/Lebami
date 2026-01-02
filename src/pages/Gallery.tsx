@@ -100,9 +100,9 @@ const Gallery = () => {
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-12 relative">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <section className="py-8 md:py-12 relative">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
             {galleryImages.map((src, index) => (
               <motion.div
                 key={index}
@@ -110,7 +110,7 @@ const Gallery = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="group cursor-pointer relative aspect-square rounded-xl overflow-hidden glass-panel"
+                className="group cursor-pointer relative aspect-square rounded-lg md:rounded-xl overflow-hidden glass-panel"
                 onClick={() => setSelectedImage(index)}
               >
                 <img
@@ -120,7 +120,7 @@ const Gallery = () => {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-primary/10 transition-colors duration-300" />
-                <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-primary/50 transition-colors duration-500" />
+                <div className="absolute inset-0 rounded-lg md:rounded-xl border border-transparent group-hover:border-primary/50 transition-colors duration-500" />
               </motion.div>
             ))}
           </div>
@@ -140,24 +140,24 @@ const Gallery = () => {
             {/* Close Button */}
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-6 right-6 w-12 h-12 glass-pamel flex items-center justify-center hover:bg-primary/20 z-10 rounded-full border border-primary/20"
+              className="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 md:w-12 md:h-12 glass-panel flex items-center justify-center hover:bg-primary/20 z-20 rounded-full border border-primary/20"
             >
-              <X className="w-6 h-6 text-foreground" />
+              <X className="w-5 h-5 md:w-6 md:h-6 text-foreground" />
             </button>
 
             {/* Navigation */}
             <button
               onClick={(e) => { e.stopPropagation(); handlePrev(); }}
-              className="absolute left-4 md:left-8 w-12 h-12 glass-panel flex items-center justify-center hover:bg-primary/20 z-10 rounded-full"
+              className="absolute left-2 md:left-6 w-10 h-10 md:w-12 md:h-12 glass-panel flex items-center justify-center hover:bg-primary/20 z-10 rounded-full"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
             </button>
 
             <button
               onClick={(e) => { e.stopPropagation(); handleNext(); }}
-              className="absolute right-4 md:right-8 w-12 h-12 glass-panel flex items-center justify-center hover:bg-primary/20 z-10 rounded-full"
+              className="absolute right-2 md:right-6 w-10 h-10 md:w-12 md:h-12 glass-panel flex items-center justify-center hover:bg-primary/20 z-10 rounded-full"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
             </button>
 
             {/* Image */}
