@@ -3,17 +3,20 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, X } from "lucide-react";
 
-// Top 9 images for Home Page Preview
-const previewProjects = [
-  "https://lebami.in/wp-content/uploads/2022/04/manaf-vaniyamkulam-scaled.jpg",
-  "https://lebami.in/wp-content/uploads/2022/02/post3-01-2048x2048.jpg",
-  "https://lebami.in/wp-content/uploads/2022/02/post4-01-2048x2048.jpg",
-  "https://lebami.in/wp-content/uploads/2022/02/postno1-01-2048x2048.jpg",
-  "https://lebami.in/wp-content/uploads/2022/04/manaf-nellikkurissi-scaled.jpg",
-  "https://lebami.in/wp-content/uploads/2022/03/shebber-1-scaled.jpg",
-  "https://lebami.in/wp-content/uploads/2022/03/12-2048x1366.jpg",
-  "https://lebami.in/wp-content/uploads/2022/03/3-2048x1366.jpg",
-  "https://lebami.in/wp-content/uploads/2022/03/RIYA8212-2048x1366.jpg",
+const projects = [
+  { id: 1, title: "ABOOBACKAR", category: "VANIYAMKULAM", location: "India", image: "/img/1.png" },
+  { id: 2, title: "KASIM EAST", category: "OTTAPALAM", location: "India", image: "/img/2.png" },
+  { id: 3, title: "ABDUL MANAF", category: "NELLIKURUSHI", location: "India", image: "/img/3.png" },
+  { id: 4, title: "BASHEER", category: "KONGAD", location: "India", image: "/img/4.png" },
+  { id: 5, title: "PATHUTTY", category: "VANIYAMKULAM", location: "India", image: "/img/5.png" },
+  { id: 6, title: "SALINI AND REGHU", category: "19-04-2022", location: "India", image: "/img/6.png" },
+  { id: 7, title: "ABDUL MANAF", category: "NELLIKURUSHI", location: "India", image: "/img/7.png" },
+  { id: 8, title: "MARAKKAR ALIKKAL", category: "KURUVATTUR", location: "India", image: "/img/8.png" },
+  { id: 9, title: "VISWANATHAN", category: "VANIYAMKULAM", location: "India", image: "/img/9.png" },
+  { id: 10, title: "ANEESH", category: "OTTAPALAM", location: "India", image: "/img/10.png" },
+  { id: 11, title: "BAHSHEER", category: "THOTTAKARA", location: "India", image: "/img/11.png" },
+  { id: 12, title: "BASHEER", category: "KONGAD", location: "India", image: "/img/12.png" },
+  { id: 13, title: "MASJID", category: "KARAKKAD", location: "India", image: "/img/13.png" },
 ];
 
 export const ProjectsSection = () => {
@@ -56,31 +59,42 @@ export const ProjectsSection = () => {
               to="/projects"
               className="inline-flex items-center gap-2 text-primary font-orbitron text-sm tracking-wider hover:gap-3 transition-all duration-300"
             >
-              View Full Gallery <ArrowRight className="w-4 h-4" />
+              View All Projects <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {previewProjects.map((image, i) => (
+          {projects.map((project, i) => (
             <motion.div
-              key={i}
+              key={project.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              transition={{ delay: i * 0.15 }}
               whileHover={{ y: -10 }}
               className="group cursor-pointer"
-              onClick={() => setSelectedImage(image)}
+              onClick={() => setSelectedImage(project.image)}
             >
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden glass-panel">
                 <img
-                  src={image}
-                  alt={`Project ${i + 1}`}
+                  src={project.image}
+                  alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="image-overlay" />
                 <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-500" />
+
+                {/* Content */}
+                <div className="absolute bottom-4 left-4 right-4 p-4 glass-panel backdrop-blur-md bg-white/10 border border-white/20 rounded-xl transition-all duration-300 group-hover:bg-white/20">
+                  <span className="inline-block px-3 py-1 text-xs font-orbitron tracking-wider bg-black/40 text-primary rounded-full mb-2 border border-primary/30">
+                    {project.category}
+                  </span>
+                  <h3 className="font-orbitron text-lg font-semibold text-white mb-1">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-300 text-xs">{project.location}</p>
+                </div>
 
                 {/* Hover Border Glow */}
                 <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-primary/50 transition-colors duration-500" />
