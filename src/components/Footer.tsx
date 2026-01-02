@@ -12,10 +12,11 @@ export const Footer = () => {
           {/* Brand */}
           <div>
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                <span className="font-orbitron font-bold text-foreground text-lg">L</span>
-              </div>
-              <span className="font-orbitron font-bold text-xl tracking-widest">LEBAMI</span>
+              <img
+                src="/ic.png"
+                alt="LEBAMI"
+                className="h-12 w-auto object-contain"
+              />
             </Link>
             <p className="text-muted-foreground leading-relaxed">
               Engineering the future through architectural excellence and precision construction.

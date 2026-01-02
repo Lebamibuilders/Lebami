@@ -42,7 +42,7 @@ export const Navbar = () => {
           <Link to="/" className="flex items-center gap-3 group">
             <div className="relative h-16">
               <img
-                src="/lebami_logo.png"
+                src="/ic.png"
                 alt="LEBAMI"
                 className="h-full w-auto object-contain"
               />
