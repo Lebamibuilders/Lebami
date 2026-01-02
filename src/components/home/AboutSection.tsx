@@ -1,18 +1,15 @@
 import { motion } from "framer-motion";
-import projectVilla from "@/assets/project-villa.jpg";
-import projectCommercial from "@/assets/project-commercial.jpg";
-import projectInfra from "@/assets/project-infrastructure.jpg";
-import heroImage from "@/assets/hero-building.jpg";
+
 
 const expertiseAreas = [
-  { title: "International Stadium Projects", image: heroImage },
-  { title: "Roads & Infra Projects", image: projectInfra },
-  { title: "Airport Runway Projects", image: projectInfra },
-  { title: "Airport Building Projects", image: heroImage },
-  { title: "High Rise Building Projects", image: projectCommercial },
-  { title: "PEB / Steel Structures", image: projectCommercial },
-  { title: "Military Base Projects", image: projectInfra },
-  { title: "Residential Villa Projects", image: projectVilla },
+  { title: "International Stadium Projects", image: "https://images.unsplash.com/photo-1487466365202-1afdb86c764e?q=80&w=2070&auto=format&fit=crop" },
+  { title: "Roads & Infra Projects", image: "https://images.unsplash.com/photo-1545276070-ec815f01c687?q=80&w=2070&auto=format&fit=crop" },
+  { title: "Airport Runway Projects", image: "https://images.unsplash.com/photo-1570710891163-6d3b5c47248b?q=80&w=2070&auto=format&fit=crop" },
+  { title: "Airport Building Projects", image: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?q=80&w=2070&auto=format&fit=crop" },
+  { title: "High Rise Building Projects", image: "https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=2074&auto=format&fit=crop" },
+  { title: "PEB / Steel Structures", image: "https://plus.unsplash.com/premium_photo-1661962692059-55d5a4319814?q=80&w=2070&auto=format&fit=crop" },
+  { title: "Military Base Projects", image: "https://images.unsplash.com/photo-1559627755-6677c77d4db2?q=80&w=2042&auto=format&fit=crop" },
+  { title: "Residential Villa Projects", image: "https://images.unsplash.com/photo-1600596542815-2a4d04774c71?q=80&w=2075&auto=format&fit=crop" },
 ];
 
 export const AboutSection = () => {
