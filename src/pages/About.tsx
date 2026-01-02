@@ -116,9 +116,10 @@ const About = () => {
               <div className="p-6 text-center">
                 <Globe className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h3 className="font-orbitron text-2xl font-semibold mb-3 text-foreground">India</h3>
-                <p className="text-muted-foreground">
-                  Headquarters and primary operations spanning multiple states,
-                  delivering residential, commercial, and infrastructure projects.
+                <p className="text-muted-foreground whitespace-pre-line">
+                  Lebami Builders And Developers,
+                  Upasana Arcade, Thottakkara,
+                  Ottapalam, Kerala
                 </p>
               </div>
             </GlassCard>
@@ -126,9 +127,10 @@ const About = () => {
               <div className="p-6 text-center">
                 <Globe className="w-12 h-12 text-primary mx-auto mb-4" />
                 <h3 className="font-orbitron text-2xl font-semibold mb-3 text-foreground">Qatar</h3>
-                <p className="text-muted-foreground">
-                  Strategic Middle East operations focusing on luxury residential
-                  and landmark commercial developments.
+                <p className="text-muted-foreground whitespace-pre-line">
+                  Lebami Builders And Developers,
+                  building 248 streetn790,
+                  Doha, Qatar
                 </p>
               </div>
             </GlassCard>
