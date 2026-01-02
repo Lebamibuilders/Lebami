@@ -39,15 +39,16 @@ export const BlueprintToReality = () => {
 
                                 <div className="space-y-4">
                                     <div className="flex items-center justify-between border-b border-primary/20 pb-2">
-                                        <p className="text-primary/80 text-sm font-mono">Project: Skyline Tower</p>
-                                        <p className="text-green-400 text-xs font-bold animate-pulse">ACTIVE</p>
+                                        <div>
+                                            <h3 className="font-orbitron text-white text-lg">
+                                                From Plan to Reality
+                                            </h3>
+                                            <p className="text-primary/80 text-xs font-mono">Interactive Showcase</p>
+                                        </div>
                                     </div>
-                                    <div className="flex items-center justify-between border-b border-primary/20 pb-2">
-                                        <p className="text-primary/80 text-sm font-mono">Phase: Framing</p>
-                                        <p className="text-white text-xs">85%</p>
-                                    </div>
-                                    <div className="w-full">
-                                        <div className="h-2 bg-primary/10 rounded-full overflow-hidden border border-primary/30">
+
+                                    <div className="w-full relative py-4">
+                                        <div className="h-1 bg-primary/10 rounded-full overflow-hidden border border-primary/30">
                                             <motion.div
                                                 initial={{ width: "0%" }}
                                                 whileInView={{ width: "65%" }}
@@ -60,13 +61,11 @@ export const BlueprintToReality = () => {
                                             initial={{ left: "0%" }}
                                             whileInView={{ left: "65%" }}
                                             transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
-                                            className="absolute top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/10 backdrop-blur-md border border-white/40 shadow-[0_0_15px_rgba(255,255,255,0.2)] flex items-center justify-center cursor-pointer hover:scale-110 transition-transform"
+                                            className="absolute top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white/10 backdrop-blur-md border border-white/40 shadow-[0_0_15px_rgba(255,255,255,0.2)] flex items-center justify-center cursor-pointer hover:scale-110 transition-transform z-20"
                                         >
-                                            <div className="w-2 h-2 rounded-full bg-white" />
+                                            <div className="w-1.5 h-1.5 rounded-full bg-white" />
                                         </motion.div>
                                     </div>
-
-                                    <p className="text-primary/80 text-sm font-mono">Completion: Q4 2024</p>
                                 </div>
                             </div>
 
