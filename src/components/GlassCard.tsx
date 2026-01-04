@@ -9,6 +9,15 @@ interface GlassCardProps {
 }
 
 export const GlassCard = ({ children, className = "", delay = 0, hover = true }: GlassCardProps) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const { currentTarget, clientX, clientY } = e;
+    const { left, top } = currentTarget.getBoundingClientRect();
+    const x = clientX - left;
+    const y = clientY - top;
+    currentTarget.style.setProperty("--mouse-x", `${x}px`);
+    currentTarget.style.setProperty("--mouse-y", `${y}px`);
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -16,7 +25,8 @@ export const GlassCard = ({ children, className = "", delay = 0, hover = true }:
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay, ease: "easeOut" }}
       whileHover={hover ? { y: -8, transition: { duration: 0.3 } } : undefined}
-      className={`glass-card ${className}`}
+      onMouseMove={handleMouseMove}
+      className={`glass-card spotlight-card ${className}`}
     >
       {children}
     </motion.div>

@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronDown } from "lucide-react";
@@ -5,6 +6,34 @@ import heroImage from "@/assets/hero-building.jpg";
 import { GlassCard } from "@/components/GlassCard";
 
 export const HeroSection = () => {
+  const [displayText, setDisplayText] = useState("We Make It Real");
+  const targetText = "We Make It Real";
+
+  useEffect(() => {
+    let iteration = 0;
+    const interval = setInterval(() => {
+      setDisplayText((prev) =>
+        prev
+          .split("")
+          .map((letter, index) => {
+            if (index < iteration) {
+              return targetText[index];
+            }
+            return String.fromCharCode(65 + Math.floor(Math.random() * 26));
+          })
+          .join("")
+      );
+
+      if (iteration >= targetText.length) {
+        clearInterval(interval);
+      }
+
+      iteration += 1 / 3;
+    }, 30);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
@@ -69,9 +98,9 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="font-montserrat text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 text-white"
+              className="font-montserrat text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 text-white min-h-[1.2em]"
             >
-              We Make It Real
+              {displayText}
             </motion.h1>
 
             <motion.p

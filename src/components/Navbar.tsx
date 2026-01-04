@@ -55,9 +55,9 @@ export const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`relative font-inter text-sm tracking-wider uppercase transition-colors duration-300 ${location.pathname === link.path
-                  ? "text-primary"
-                  : "text-muted-foreground hover:text-foreground"
+                className={`relative font-inter text-sm tracking-wider uppercase transition-all duration-300 hover:text-glow-intense ${location.pathname === link.path
+                    ? "text-primary text-glow"
+                    : "text-muted-foreground hover:text-foreground"
                   }`}
               >
                 {link.name}
@@ -74,7 +74,7 @@ export const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden w-10 h-10 glass-panel flex items-center justify-center"
+            className="lg:hidden w-10 h-10 glass-panel flex items-center justify-center hover:bg-white/5 transition-colors"
           >
             {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -85,13 +85,13 @@ export const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-x-0 top-20 z-40 lg:hidden p-6"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="fixed inset-x-0 top-20 z-40 lg:hidden px-6 overflow-hidden"
           >
-            <div className="glass-panel p-6 space-y-4">
+            <div className="glass-panel p-6 space-y-4 backdrop-blur-2xl bg-black/80">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.path}
@@ -101,9 +101,10 @@ export const Navbar = () => {
                 >
                   <Link
                     to={link.path}
-                    className={`block py-3 font-orbitron text-lg tracking-wider ${location.pathname === link.path
-                      ? "text-primary"
-                      : "text-foreground"
+                    onClick={() => setIsOpen(false)}
+                    className={`block py-3 font-orbitron text-lg tracking-wider transition-all hover:pl-2 ${location.pathname === link.path
+                        ? "text-primary text-glow"
+                        : "text-foreground hover:text-primary"
                       }`}
                   >
                     {link.name}
