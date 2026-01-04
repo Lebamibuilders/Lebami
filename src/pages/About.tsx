@@ -1,5 +1,7 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { GlassCard } from "@/components/GlassCard";
+import { TiltCard } from "@/components/TiltCard";
+import { GlobalMap } from "@/components/GlobalMap";
 import { Target, Eye, Heart, Globe, Award, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -69,19 +71,21 @@ const About = () => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {values.map((value, i) => (
-              <GlassCard key={value.title} delay={i * 0.15}>
-                <div className="p-4">
-                  <div className="w-16 h-16 mb-6 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                    <value.icon className="w-8 h-8 text-primary" />
+              <TiltCard key={value.title} className="h-full">
+                <GlassCard delay={i * 0.15} className="h-full">
+                  <div className="p-8 h-full flex flex-col items-center text-center">
+                    <div className="w-20 h-20 mb-6 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center border border-primary/20 shadow-[0_0_30px_rgba(0,102,255,0.1)] group-hover:shadow-[0_0_50px_rgba(0,102,255,0.3)] transition-shadow duration-500">
+                      <value.icon className="w-10 h-10 text-primary" />
+                    </div>
+                    <h3 className="font-orbitron text-2xl font-bold mb-4 text-white">
+                      {value.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {value.description}
+                    </p>
                   </div>
-                  <h3 className="font-orbitron text-2xl font-semibold mb-4 gradient-text-gold">
-                    {value.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {value.description}
-                  </p>
-                </div>
-              </GlassCard>
+                </GlassCard>
+              </TiltCard>
             ))}
           </div>
         </div>
@@ -90,6 +94,7 @@ const About = () => {
       {/* Geographical Presence */}
       <section className="py-20 relative">
         <div className="absolute inset-0 bg-gradient-radial from-primary/5 to-transparent" />
+        <GlobalMap />
         <div className="container mx-auto px-6 relative">
           <div className="text-center mb-16">
             <motion.p

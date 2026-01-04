@@ -7,6 +7,7 @@ import { WhyChooseSection } from "@/components/home/WhyChooseSection";
 import { ConstructionProcess } from "@/components/home/ConstructionProcess";
 import { StatsCounter } from "@/components/home/StatsCounter";
 import { CTASection } from "@/components/home/CTASection";
+import { HorizontalTimeline } from "@/components/home/HorizontalTimeline";
 
 const Index = () => {
   return (
@@ -15,6 +16,7 @@ const Index = () => {
       <BlueprintToReality />
       <StatsCounter />
       <AboutSection />
+      <HorizontalTimeline />
       <ServicesSection />
       <ConstructionProcess />
       <ProjectsSection />

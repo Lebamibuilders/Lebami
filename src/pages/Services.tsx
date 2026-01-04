@@ -9,6 +9,7 @@ import {
   MessageSquare,
   Key
 } from "lucide-react";
+import { BlueprintOverlay } from "@/components/BlueprintOverlay";
 
 const workflow = [
   {
@@ -184,8 +185,9 @@ const Services = () => {
 
                   {/* Features Card - Using GlassCard with new Ruler Markings */}
                   <div className={i % 2 === 1 ? "lg:order-1" : ""}>
-                    <GlassCard hover={true} className="h-full">
-                      <div className="p-4 md:p-6">
+                    <GlassCard hover={true} className="h-full relative overflow-hidden group">
+                      <BlueprintOverlay />
+                      <div className="p-4 md:p-6 relative z-10">
                         <div className="flex items-center justify-between mb-6 border-b border-white/10 pb-4">
                           <h3 className="font-orbitron text-lg font-semibold text-foreground">
                             Technical Scope
