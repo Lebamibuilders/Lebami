@@ -42,7 +42,7 @@ export const ConstructionProcess = () => {
                     {/* Connecting Line (Desktop) */}
                     <div className="hidden md:block absolute top-[60px] left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-20 md:gap-8">
                         {steps.map((step, i) => (
                             <motion.div
                                 key={i}
