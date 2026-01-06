@@ -40,7 +40,7 @@ export const Navbar = () => {
       >
         <div className="container mx-auto px-6 flex items-center justify-between relative min-h-[50px]">
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="relative h-16">
+            <div className="relative h-20 md:h-28 transition-all duration-300">
               <img
                 src="/lebami_logo.png"
                 alt="LEBAMI"
@@ -56,15 +56,15 @@ export const Navbar = () => {
                 key={link.path}
                 to={link.path}
                 className={`relative font-inter text-sm tracking-wider uppercase transition-all duration-300 hover:text-glow-intense ${location.pathname === link.path
-                    ? "text-primary text-glow"
-                    : "text-muted-foreground hover:text-foreground"
+                  ? "text-primary text-glow"
+                  : "text-muted-foreground hover:text-foreground"
                   }`}
               >
                 {link.name}
                 {location.pathname === link.path && (
                   <motion.div
                     layoutId="navbar-indicator"
-                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#00A3FF] shadow-[0_0_10px_#00A3FF]"
+                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#FFD700] shadow-[0_0_10px_#FFD700]"
                   />
                 )}
               </Link>
@@ -103,8 +103,8 @@ export const Navbar = () => {
                     to={link.path}
                     onClick={() => setIsOpen(false)}
                     className={`block py-3 font-orbitron text-lg tracking-wider transition-all hover:pl-2 ${location.pathname === link.path
-                        ? "text-primary text-glow"
-                        : "text-foreground hover:text-primary"
+                      ? "text-primary text-glow"
+                      : "text-foreground hover:text-primary"
                       }`}
                   >
                     {link.name}

@@ -18,6 +18,7 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+import { GlobalBackground } from "@/components/ui/GlobalBackground";
 import { SmoothScroll } from "@/components/SmoothScroll";
 
 const App = () => (
@@ -26,6 +27,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <GlobalBackground />
         <SmoothScroll />
         <ScrollProgress />
         <Navbar />

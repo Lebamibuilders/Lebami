@@ -58,8 +58,8 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
         bmw: {
-          blue: "#0066FF", // Electric Blue
-          electric: "#00A3FF", // Cyan Edge
+          gold: "#D4AF37", // Metallic Gold
+          bright: "#FFD700", // Bright Gold
           black: "#02040A", // Onyx
         },
       },
@@ -99,8 +99,8 @@ export default {
           "100%": { opacity: "1", transform: "scale(1)" },
         },
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 20px rgba(0, 102, 255, 0.4)" },
-          "50%": { boxShadow: "0 0 50px rgba(0, 102, 255, 0.7)" },
+          "0%, 100%": { boxShadow: "0 0 20px rgba(212, 175, 55, 0.4)" },
+          "50%": { boxShadow: "0 0 50px rgba(212, 175, 55, 0.7)" },
         },
         shimmer: {
           "0%": { backgroundPosition: "-200% 0" },
@@ -114,6 +114,10 @@ export default {
           "0%": { width: "0%" },
           "100%": { width: "100%" },
         },
+        "cinematic-shine": {
+          "0%, 90%": { backgroundPosition: "200% center" },
+          "100%": { backgroundPosition: "-200% center" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -125,11 +129,13 @@ export default {
         "glow-pulse": "glow-pulse 3s ease-in-out infinite",
         shimmer: "shimmer 2s linear infinite",
         float: "float 6s ease-in-out infinite",
+        "cinematic-shine": "cinematic-shine 12s ease-in-out infinite",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(ellipse at center, var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "blue-glow": "radial-gradient(ellipse at center, rgba(0, 102, 255, 0.2) 0%, transparent 70%)",
+        "gold-glow": "radial-gradient(ellipse at center, rgba(212, 175, 55, 0.2) 0%, transparent 70%)",
+        "blueprint-grid": "linear-gradient(to right, #ffffff08 1px, transparent 1px), linear-gradient(to bottom, #ffffff08 1px, transparent 1px)",
       },
     },
   },

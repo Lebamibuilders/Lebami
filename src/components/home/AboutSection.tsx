@@ -1,91 +1,136 @@
 import { motion } from "framer-motion";
+import { useRef } from "react";
+import militaryImg from "@/assets/project-military.png";
+import airportImg from "@/assets/project-airport.png";
+import roadsImg from "@/assets/project-roads.png";
+import stadiumImg from "@/assets/project-stadium.png";
+import runwayImg from "@/assets/project-runway.png";
+import highriseImg from "@/assets/project-highrise.png";
+import steelImg from "@/assets/project-steel.png";
+import villaImg from "@/assets/project-villa.png";
 
-
-const expertiseAreas = [
-  { title: "International Stadium Projects", image: "/stadium-update.png" }, // User provided stadium image
-  { title: "Roads & Infra Projects", image: "/road.png" }, // Local file
-  { title: "Airport Runway Projects", image: "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&q=80&w=800" }, // Runway Tarmac
-  { title: "Airport Building Projects", image: "/airport-building.png" }, // Local file (New download)
-  { title: "High Rise Building Projects", image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80&w=800" }, // Modern Skyscraper
-  { title: "PEB / Steel Structures", image: "/steel.png" }, // Local file
-  { title: "Military Base Projects", image: "/miltary.png" }, // Local file (preserving user requested filename)
-  { title: "Residential Villa Projects", image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&q=80&w=800" }, // Modern Luxury Villa
+const projects = [
+  {
+    title: "Defense Infrastructure",
+    description: "Strategic military facilities & command centers",
+    image: militaryImg,
+  },
+  {
+    title: "Aviation Hubs",
+    description: "International terminals & logistic gateways",
+    image: airportImg,
+  },
+  {
+    title: "Civil Networks",
+    description: "Highways, bridges & urban connectivity",
+    image: roadsImg,
+  },
+  {
+    title: "Sports Complexes",
+    description: "World-class arenas & performance centers",
+    image: stadiumImg,
+  },
+  {
+    title: "Aeronautical Pavement",
+    description: "Precision runway & taxiway engineering",
+    image: runwayImg,
+  },
+  {
+    title: "Vertical Developments",
+    description: "Iconic high-rise commercial towers",
+    image: highriseImg,
+  },
+  {
+    title: "Industrial Steel",
+    description: "Large-span PEB & manufacturing structures",
+    image: steelImg,
+  },
+  {
+    title: "Luxury Estates",
+    description: "Premium residential villa communities",
+    image: villaImg,
+  },
 ];
 
 export const AboutSection = () => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
   return (
-    <section className="py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-radial from-primary/5 via-transparent to-transparent" />
+    <section className="py-32 relative overflow-hidden bg-[#09090b]">
+      {/* Subtle Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80 pointer-events-none" />
 
-      <div className="container mx-auto px-6 relative">
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="font-orbitron text-primary tracking-[0.3em] text-sm mb-4"
-          >
-            WHO WE ARE
-          </motion.p>
-
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="section-title text-white mb-8"
+            className="section-title text-white mb-4"
           >
-            Strong Buildings. Good Work.
+            Sectors of Expertise
           </motion.h2>
-
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-muted-foreground text-lg leading-relaxed"
+            transition={{ delay: 0.1 }}
+            className="text-muted-foreground text-sm uppercase tracking-[0.3em] font-light"
           >
-            Lebami builds strong places for businesses. We work in India and Qatar. We are good at making places where people work and shop. We make sure every brick and beam is right.
+            Comprehensive Engineering Capabilities
           </motion.p>
-
-          <div className="mt-20">
-            <h3 className="font-orbitron font-bold text-3xl text-white mb-12">What We Build</h3>
-
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-              {expertiseAreas.map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="flex flex-col items-center group cursor-pointer"
-                >
-                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-white/20 group-hover:border-primary transition-all duration-500 relative mb-4 shadow-[0_0_20px_rgba(0,0,0,0.3)]">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
-                  </div>
-                  <h4 className="font-orbitron font-semibold text-white/90 text-sm md:text-base max-w-[150px] leading-tight group-hover:text-primary transition-colors">
-                    {item.title}
-                  </h4>
-                </motion.div>
-              ))}
-            </div>
-
-            <h3 className="font-orbitron font-bold text-2xl text-white mb-6">We Check Everything</h3>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              We have a strict list of checks. We check the materials. We check the work. We make sure everything follows the plan. We do this so your building is safe and lasts a long time.
-            </p>
-            <p className="text-muted-foreground leading-relaxed border-l-2 border-primary/50 pl-4 py-2 bg-white/5 rounded-r-lg">
-              Lebami wants to be the best builder. We promise to do good work for you.
-            </p>
-          </div>
         </div>
+      </div>
 
+      {/* Horizontal Scroll Container */}
+      <div
+        ref={scrollContainerRef}
+        className="flex overflow-x-auto gap-4 md:gap-8 px-6 pb-12 snap-x snap-mandatory scrollbar-hide"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
+        {projects.map((project, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 }}
+            className="flex-shrink-0 w-[260px] md:w-[380px] snap-center group relative cursor-pointer"
+          >
+            {/* Card Container */}
+            <div className="relative h-[380px] md:h-[500px] w-full rounded-[20px] overflow-hidden transform transition-all duration-700 ease-out group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+
+              {/* Image Layer */}
+              <div className="absolute inset-0">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
+                />
+                {/* Dark Overlay Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-70 transition-opacity duration-500" />
+              </div>
+
+              {/* Content Layer */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex flex-col justify-end h-full">
+                <div className="transform transition-transform duration-500 group-hover:translate-y-[-10px]">
+                  <h3 className="text-xl md:text-3xl font-bold text-white mb-2 md:mb-3 font-montserrat leading-tight">
+                    {project.title}
+                  </h3>
+                  <p className="text-white/70 text-xs md:text-sm font-light tracking-wide border-l-[1px] border-primary/0 pl-0 transition-all duration-500 group-hover:border-primary group-hover:pl-4">
+                    {project.description}
+                  </p>
+                </div>
+              </div>
+
+              {/* Gold Accent (Border Glow) */}
+              <div className="absolute inset-0 rounded-[20px] border border-primary/0 transition-all duration-500 group-hover:border-primary/50 pointer-events-none" />
+              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-primary/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none rounded-b-[20px]" />
+            </div>
+          </motion.div>
+        ))}
+        {/* Spacer for end of scroll */}
+        <div className="w-6 flex-shrink-0" />
       </div>
     </section>
   );

@@ -6,7 +6,7 @@ export const GlobalMap = () => {
             {/* Abstract World Map Dots */}
             <div className="absolute inset-0"
                 style={{
-                    backgroundImage: `radial-gradient(circle, rgba(0, 102, 255, 0.2) 1px, transparent 1px)`,
+                    backgroundImage: `radial-gradient(circle, rgba(212, 175, 55, 0.2) 1px, transparent 1px)`,
                     backgroundSize: "30px 30px",
                     maskImage: "radial-gradient(circle at center, black 40%, transparent 80%)"
                 }}
@@ -16,9 +16,9 @@ export const GlobalMap = () => {
             <svg className="absolute inset-0 w-full h-full">
                 <defs>
                     <linearGradient id="gradient-line" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#0066FF" stopOpacity="0" />
-                        <stop offset="50%" stopColor="#0066FF" stopOpacity="1" />
-                        <stop offset="100%" stopColor="#00A3FF" stopOpacity="0" />
+                        <stop offset="0%" stopColor="#D4AF37" stopOpacity="0" />
+                        <stop offset="50%" stopColor="#D4AF37" stopOpacity="1" />
+                        <stop offset="100%" stopColor="#FFD700" stopOpacity="0" />
                     </linearGradient>
                 </defs>
 
@@ -39,7 +39,7 @@ export const GlobalMap = () => {
                     cx="65%"
                     cy="55%"
                     r="4"
-                    fill="#0066FF"
+                    fill="#D4AF37"
                     initial={{ scale: 0, opacity: 0 }}
                     whileInView={{ scale: [0, 1.5, 0], opacity: [0, 1, 0] }}
                     transition={{ duration: 2, repeat: Infinity }}
@@ -50,7 +50,7 @@ export const GlobalMap = () => {
                     cx="45%"
                     cy="45%"
                     r="4"
-                    fill="#00A3FF"
+                    fill="#FFD700"
                     initial={{ scale: 0, opacity: 0 }}
                     whileInView={{ scale: [0, 1.5, 0], opacity: [0, 1, 0] }}
                     transition={{ duration: 2, delay: 1, repeat: Infinity }}

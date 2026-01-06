@@ -26,7 +26,7 @@ export const BlueprintToReality = () => {
                     {/* Blueprint Face */}
                     <motion.div
                         style={{ opacity: opacityBlueprint }}
-                        className="absolute inset-0 backface-hidden border-2 border-primary/50 bg-primary/5 p-8 flex flex-col justify-center items-center shadow-[0_0_50px_rgba(0,102,255,0.2)]"
+                        className="absolute inset-0 backface-hidden border-2 border-primary/50 bg-primary/5 p-8 flex flex-col justify-center items-center shadow-[0_0_50px_rgba(212,175,55,0.2)]"
                     >
                         <div className="w-full h-full border border-dashed border-primary/30 p-4 relative">
                             <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-primary" />
@@ -39,8 +39,8 @@ export const BlueprintToReality = () => {
                                     <span className="text-[10px]">PLAN</span>
                                 </div>
                                 <div className="space-y-2 text-center">
-                                    <p>[ANALYZING STRUCTURE]</p>
-                                    <p>LOAD: 85%</p>
+                                    <p>[STRUCTURAL ANALYSIS]</p>
+                                    <p>LOAD: OPTIMAL</p>
                                     <p>INTEGRITY: 100%</p>
                                 </div>
                             </div>
@@ -54,7 +54,7 @@ export const BlueprintToReality = () => {
                             opacity: opacityReality,
                             rotateY: 180 // Pre-rotated so it faces correct way when container rotates 180
                         }}
-                        className="absolute inset-0 backface-hidden rounded-xl overflow-hidden shadow-[0_0_100px_rgba(0,163,255,0.5)]"
+                        className="absolute inset-0 backface-hidden rounded-xl overflow-hidden shadow-[0_0_100px_rgba(255,215,0,0.5)]"
                     >
                         <img
                             src={heroImage}
@@ -63,8 +63,8 @@ export const BlueprintToReality = () => {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                         <div className="absolute bottom-10 left-0 right-0 text-center">
-                            <h3 className="text-white font-orbitron text-2xl md:text-4xl font-bold tracking-wider">REALITY</h3>
-                            <p className="text-primary-foreground/80 mt-2 font-mono text-sm">PROJECT COMPLETED</p>
+                            <h3 className="text-white font-orbitron text-2xl md:text-3xl font-bold tracking-wider">COMPLETED VISION</h3>
+                            <p className="text-primary-foreground/80 mt-2 font-mono text-xs tracking-widest">PROJECT DELIVERED</p>
                         </div>
                     </motion.div>
                 </motion.div>
