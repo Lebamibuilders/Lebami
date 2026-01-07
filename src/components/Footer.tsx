@@ -104,8 +104,8 @@ export const Footer = () => {
         <div className="glow-line mb-8" />
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">
-            Copyright © 2024 Lebami<br />
-            Powered by Sangamam Communications
+            Copyright © 2025 Lebami<br />
+            Powered by Helixtop
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">
