@@ -18,16 +18,24 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const emailSubject = `Contact Form: ${formData.subject}`;
+    const body = `
+Name: ${formData.name}
+Email: ${formData.email}
+
+Message:
+${formData.message}
+    `.trim();
+
+    window.location.href = `mailto:info@lebami.in?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(body)}`;
 
     toast({
-      title: "Message Sent Successfully!",
-      description: "We'll get back to you within 24 hours.",
+      title: "Opening Email Client",
+      description: "Please send the email to complete your message.",
     });
 
     setFormData({ name: "", email: "", subject: "", message: "" });
