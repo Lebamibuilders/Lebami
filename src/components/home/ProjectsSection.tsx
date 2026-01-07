@@ -3,26 +3,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, X } from "lucide-react";
 
-import projectHighrise from '../../assets/project-highrise.png';
-import projectVilla from '../../assets/project-villa.png';
-import projectCommercial from '../../assets/project-commercial.jpg';
-import projectStadium from '../../assets/project-stadium.png';
-import projectAirport from '../../assets/project-airport.png';
-import projectMilitary from '../../assets/project-military.png';
-import projectRoads from '../../assets/project-roads.png';
-import projectSteel from '../../assets/project-steel.png';
-import projectRunway from '../../assets/project-runway.png';
+import completedProject1 from '../../assets/completed-project-1.jpg';
+import completedProject2 from '../../assets/completed-project-2.jpg';
+import completedProject3 from '../../assets/completed-project-3.jpg';
+import completedProject4 from '../../assets/completed-project-4.jpg';
+import completedProject5 from '../../assets/completed-project-5.jpg';
 
 const projects = [
-  { id: 1, image: projectHighrise },
-  { id: 2, image: projectVilla },
-  { id: 3, image: projectCommercial },
-  { id: 4, image: projectStadium },
-  { id: 5, image: projectAirport },
-  { id: 6, image: projectMilitary },
-  { id: 7, image: projectRoads },
-  { id: 8, image: projectSteel },
-  { id: 9, image: projectRunway },
+  { id: 1, image: completedProject1 },
+  { id: 2, image: completedProject2 },
+  { id: 3, image: completedProject3 },
+  { id: 4, image: completedProject4 },
+  { id: 5, image: completedProject5 },
 ];
 
 export const ProjectsSection = () => {
