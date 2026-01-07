@@ -6,6 +6,7 @@ import Services from "@/pages/Services";
 import Projects from "@/pages/Projects";
 import Gallery from "@/pages/Gallery";
 import Contact from "@/pages/Contact";
+import Careers from "@/pages/Careers";
 import NotFound from "@/pages/NotFound";
 
 import { useLayoutEffect } from "react";
@@ -40,6 +41,7 @@ export const AnimatedRoutes = () => {
                 <Route path="/projects" element={<PageTransition><Projects /></PageTransition>} />
                 <Route path="/gallery" element={<PageTransition><Gallery /></PageTransition>} />
                 <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+                <Route path="/careers" element={<PageTransition><Careers /></PageTransition>} />
                 <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
             </Routes>
         </AnimatePresence>
