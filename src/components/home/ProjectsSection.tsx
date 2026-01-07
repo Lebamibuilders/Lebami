@@ -3,20 +3,26 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, X } from "lucide-react";
 
+import projectHighrise from '../../assets/project-highrise.png';
+import projectVilla from '../../assets/project-villa.png';
+import projectCommercial from '../../assets/project-commercial.jpg';
+import projectStadium from '../../assets/project-stadium.png';
+import projectAirport from '../../assets/project-airport.png';
+import projectMilitary from '../../assets/project-military.png';
+import projectRoads from '../../assets/project-roads.png';
+import projectSteel from '../../assets/project-steel.png';
+import projectRunway from '../../assets/project-runway.png';
+
 const projects = [
-  { id: 1, title: "ABOOBACKAR", category: "VANIYAMKULAM", location: "India", image: "/img/1.png" },
-  { id: 2, title: "KASIM EAST", category: "OTTAPALAM", location: "India", image: "/img/2.png" },
-  { id: 3, title: "ABDUL MANAF", category: "NELLIKURUSHI", location: "India", image: "/img/3.png" },
-  { id: 4, title: "BASHEER", category: "KONGAD", location: "India", image: "/img/4.png" },
-  { id: 5, title: "PATHUTTY", category: "VANIYAMKULAM", location: "India", image: "/img/5.png" },
-  { id: 6, title: "SALINI AND REGHU", category: "19-04-2022", location: "India", image: "/img/6.png" },
-  { id: 7, title: "ABDUL MANAF", category: "NELLIKURUSHI", location: "India", image: "/img/7.png" },
-  { id: 8, title: "MARAKKAR ALIKKAL", category: "KURUVATTUR", location: "India", image: "/img/8.png" },
-  { id: 9, title: "VISWANATHAN", category: "VANIYAMKULAM", location: "India", image: "/img/9.png" },
-  { id: 10, title: "ANEESH", category: "OTTAPALAM", location: "India", image: "/img/10.png" },
-  { id: 11, title: "BAHSHEER", category: "THOTTAKARA", location: "India", image: "/img/11.png" },
-  { id: 12, title: "BASHEER", category: "KONGAD", location: "India", image: "/img/12.png" },
-  { id: 13, title: "MASJID", category: "KARAKKAD", location: "India", image: "/img/13.png" },
+  { id: 1, image: projectHighrise },
+  { id: 2, image: projectVilla },
+  { id: 3, image: projectCommercial },
+  { id: 4, image: projectStadium },
+  { id: 5, image: projectAirport },
+  { id: 6, image: projectMilitary },
+  { id: 7, image: projectRoads },
+  { id: 8, image: projectSteel },
+  { id: 9, image: projectRunway },
 ];
 
 export const ProjectsSection = () => {
@@ -79,22 +85,11 @@ export const ProjectsSection = () => {
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden glass-panel">
                 <img
                   src={project.image}
-                  alt={project.title}
+                  alt="Project"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="image-overlay" />
                 <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-500" />
-
-                {/* Content */}
-                <div className="absolute bottom-4 left-4 right-4 p-4 glass-panel backdrop-blur-md bg-white/10 border border-white/20 rounded-xl transition-all duration-300 group-hover:bg-white/20">
-                  <span className="inline-block px-3 py-1 text-xs font-orbitron tracking-wider bg-black/40 text-primary rounded-full mb-2 border border-primary/30">
-                    {project.category}
-                  </span>
-                  <h3 className="font-orbitron text-lg font-semibold text-white mb-1">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-300 text-xs">{project.location}</p>
-                </div>
 
                 {/* Hover Border Glow */}
                 <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-primary/50 transition-colors duration-500" />
