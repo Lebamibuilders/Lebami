@@ -2,8 +2,19 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
+import completedProject1 from '../assets/completed-project-1.jpg';
+import completedProject2 from '../assets/completed-project-2.jpg';
+import completedProject3 from '../assets/completed-project-3.jpg';
+import completedProject4 from '../assets/completed-project-4.jpg';
+import completedProject5 from '../assets/completed-project-5.jpg';
+
 // Filtered unique high-res images from user list
 const projectImages = [
+  completedProject1,
+  completedProject2,
+  completedProject3,
+  completedProject4,
+  completedProject5,
   "https://lebami.in/wp-content/uploads/2021/02/12.jpg",
   "https://lebami.in/wp-content/uploads/2021/02/lebami-gallery4.jpg",
   "https://lebami.in/wp-content/uploads/2021/02/12.-1.jpg",
